@@ -16,6 +16,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         setTitle("Main menu");
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,6 +32,10 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableOrder = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         Button7 = new javax.swing.JButton();
@@ -46,6 +51,10 @@ public class MainMenu extends javax.swing.JFrame {
         DotButton = new javax.swing.JButton();
         KeyboardButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        SubTotalButton = new javax.swing.JButton();
+        TableHoldButton = new javax.swing.JButton();
+        ViewTransButton = new javax.swing.JButton();
+        DineInButton = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         FoodButton1 = new javax.swing.JButton();
         FoodButton4 = new javax.swing.JButton();
@@ -59,9 +68,13 @@ public class MainMenu extends javax.swing.JFrame {
         FunctionButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(35, 35, 35));
 
-        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(71, 103, 237));
 
+        TableOrder.setBackground(new java.awt.Color(249, 249, 249));
+        TableOrder.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        TableOrder.setForeground(new java.awt.Color(35, 35, 35));
         TableOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -75,15 +88,54 @@ public class MainMenu extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TableOrder);
 
+        jPanel6.setBackground(new java.awt.Color(249, 249, 249));
+
+        jLabel1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(35, 35, 35));
+        jLabel1.setText("Sub Total:");
+
+        jLabel2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(35, 35, 35));
+        jLabel2.setText("Total: ");
+
+        jLabel3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(35, 35, 35));
+        jLabel3.setText("Disc:");
+
+        jSeparator1.setForeground(new java.awt.Color(35, 35, 35));
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -93,8 +145,8 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -107,7 +159,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(51, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -122,7 +174,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
 
+        Button7.setBackground(new java.awt.Color(249, 249, 249));
         Button7.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button7.setForeground(new java.awt.Color(35, 35, 35));
         Button7.setText("7");
         Button7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +184,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button8.setBackground(new java.awt.Color(249, 249, 249));
+        Button8.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button8.setForeground(new java.awt.Color(35, 35, 35));
         Button8.setText("8");
         Button8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,6 +194,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button9.setBackground(new java.awt.Color(249, 249, 249));
+        Button9.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button9.setForeground(new java.awt.Color(35, 35, 35));
         Button9.setText("9");
         Button9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +204,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button4.setBackground(new java.awt.Color(249, 249, 249));
+        Button4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button4.setForeground(new java.awt.Color(35, 35, 35));
         Button4.setText("4");
         Button4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +214,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button5.setBackground(new java.awt.Color(249, 249, 249));
+        Button5.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button5.setForeground(new java.awt.Color(35, 35, 35));
         Button5.setText("5");
         Button5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +224,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button6.setBackground(new java.awt.Color(249, 249, 249));
+        Button6.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button6.setForeground(new java.awt.Color(35, 35, 35));
         Button6.setText("6");
         Button6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +234,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button3.setBackground(new java.awt.Color(249, 249, 249));
+        Button3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button3.setForeground(new java.awt.Color(35, 35, 35));
         Button3.setText("3");
         Button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,6 +244,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button2.setBackground(new java.awt.Color(249, 249, 249));
+        Button2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button2.setForeground(new java.awt.Color(35, 35, 35));
         Button2.setText("2");
         Button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,6 +254,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button1.setBackground(new java.awt.Color(249, 249, 249));
+        Button1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button1.setForeground(new java.awt.Color(35, 35, 35));
         Button1.setText("1");
         Button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +264,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        Button0.setBackground(new java.awt.Color(249, 249, 249));
+        Button0.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Button0.setForeground(new java.awt.Color(35, 35, 35));
         Button0.setText("0");
         Button0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +274,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        DotButton.setBackground(new java.awt.Color(249, 249, 249));
+        DotButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DotButton.setForeground(new java.awt.Color(35, 35, 35));
         DotButton.setText(".");
         DotButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,6 +284,9 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        KeyboardButton.setBackground(new java.awt.Color(249, 249, 249));
+        KeyboardButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        KeyboardButton.setForeground(new java.awt.Color(35, 35, 35));
         KeyboardButton.setText("Key-board");
         KeyboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,7 +316,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                             .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,16 +334,16 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Button6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Button6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,29 +351,92 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Button0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Button0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel4.setBackground(new java.awt.Color(249, 248, 113));
+
+        SubTotalButton.setBackground(new java.awt.Color(249, 249, 249));
+        SubTotalButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubTotalButton.setForeground(new java.awt.Color(35, 35, 35));
+        SubTotalButton.setText("Sub Total");
+        SubTotalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubTotalButtonActionPerformed(evt);
+            }
+        });
+
+        TableHoldButton.setBackground(new java.awt.Color(249, 249, 249));
+        TableHoldButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        TableHoldButton.setForeground(new java.awt.Color(35, 35, 35));
+        TableHoldButton.setText("Table / Hold");
+        TableHoldButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TableHoldButtonActionPerformed(evt);
+            }
+        });
+
+        ViewTransButton.setBackground(new java.awt.Color(249, 249, 249));
+        ViewTransButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        ViewTransButton.setForeground(new java.awt.Color(35, 35, 35));
+        ViewTransButton.setText("View Trans.");
+        ViewTransButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewTransButtonActionPerformed(evt);
+            }
+        });
+
+        DineInButton.setBackground(new java.awt.Color(249, 249, 249));
+        DineInButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DineInButton.setForeground(new java.awt.Color(35, 35, 35));
+        DineInButton.setText("Dine In");
+        DineInButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DineInButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 128, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SubTotalButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(TableHoldButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(ViewTransButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(DineInButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(SubTotalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TableHoldButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ViewTransButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DineInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBackground(new java.awt.Color(249, 249, 249));
+        jPanel5.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
 
+        FoodButton1.setBackground(new java.awt.Color(249, 249, 249));
+        FoodButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        FoodButton1.setForeground(new java.awt.Color(35, 35, 35));
         FoodButton1.setText("Beverages");
 
+        FoodButton4.setBackground(new java.awt.Color(249, 249, 249));
+        FoodButton4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        FoodButton4.setForeground(new java.awt.Color(35, 35, 35));
         FoodButton4.setText("Food");
         FoodButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,25 +460,46 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FoodButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(FoodButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-                .addGap(130, 130, 130))
+                    .addComponent(FoodButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FoodButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
 
-        jPanel7.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel7.setBackground(new java.awt.Color(249, 249, 249));
 
+        CloseButton.setBackground(new java.awt.Color(249, 249, 249));
+        CloseButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        CloseButton.setForeground(new java.awt.Color(35, 35, 35));
         CloseButton.setText("Close");
 
+        SignInButton.setBackground(new java.awt.Color(249, 249, 249));
+        SignInButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SignInButton.setForeground(new java.awt.Color(35, 35, 35));
         SignInButton.setText("Sign In");
 
+        DiscountButton.setBackground(new java.awt.Color(249, 249, 249));
+        DiscountButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DiscountButton.setForeground(new java.awt.Color(35, 35, 35));
         DiscountButton.setText("Discount");
 
+        VoidButton.setBackground(new java.awt.Color(249, 249, 249));
+        VoidButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        VoidButton.setForeground(new java.awt.Color(35, 35, 35));
         VoidButton.setText("Void");
 
+        CustomModifierButton.setBackground(new java.awt.Color(249, 249, 249));
+        CustomModifierButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        CustomModifierButton.setForeground(new java.awt.Color(35, 35, 35));
         CustomModifierButton.setText("Cust. Modifier");
 
+        PrintBillButton.setBackground(new java.awt.Color(249, 249, 249));
+        PrintBillButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        PrintBillButton.setForeground(new java.awt.Color(35, 35, 35));
         PrintBillButton.setText("Print BIll");
 
+        FunctionButton.setBackground(new java.awt.Color(249, 249, 249));
+        FunctionButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        FunctionButton.setForeground(new java.awt.Color(35, 35, 35));
         FunctionButton.setText("Function");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -337,7 +508,7 @@ public class MainMenu extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PrintBillButton)
+                .addComponent(PrintBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FunctionButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -380,19 +551,19 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -456,6 +627,22 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FoodButton4ActionPerformed
 
+    private void SubTotalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubTotalButtonActionPerformed
+
+    private void TableHoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableHoldButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TableHoldButtonActionPerformed
+
+    private void ViewTransButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTransButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ViewTransButtonActionPerformed
+
+    private void DineInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DineInButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DineInButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -467,7 +654,7 @@ public class MainMenu extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Windows Vista".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -505,6 +692,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Button9;
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton CustomModifierButton;
+    private javax.swing.JButton DineInButton;
     private javax.swing.JButton DiscountButton;
     private javax.swing.JButton DotButton;
     private javax.swing.JButton FoodButton1;
@@ -513,8 +701,14 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton KeyboardButton;
     private javax.swing.JButton PrintBillButton;
     private javax.swing.JButton SignInButton;
+    private javax.swing.JButton SubTotalButton;
+    private javax.swing.JButton TableHoldButton;
     private javax.swing.JTable TableOrder;
+    private javax.swing.JButton ViewTransButton;
     private javax.swing.JButton VoidButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -523,5 +717,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
