@@ -14,6 +14,7 @@ public class MainMenu extends javax.swing.JFrame {
      * Creates new form Splash
      */
     public MainMenu() {
+        setTitle("Main menu");
         initComponents();
     }
 
@@ -228,8 +229,8 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -287,6 +288,11 @@ public class MainMenu extends javax.swing.JFrame {
         FoodButton1.setText("Beverages");
 
         FoodButton4.setText("Food");
+        FoodButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FoodButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -445,6 +451,10 @@ public class MainMenu extends javax.swing.JFrame {
     private void KeyboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KeyboardButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_KeyboardButtonActionPerformed
+
+    private void FoodButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FoodButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FoodButton4ActionPerformed
 
     /**
      * @param args the command line arguments
