@@ -50,7 +50,6 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         Button7 = new javax.swing.JButton();
         Button8 = new javax.swing.JButton();
@@ -63,7 +62,7 @@ public class MainMenu extends javax.swing.JFrame {
         Button1 = new javax.swing.JButton();
         Button0 = new javax.swing.JButton();
         DotButton = new javax.swing.JButton();
-        KeyboardButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
         PinForm = new javax.swing.JPasswordField();
         jPanel4 = new javax.swing.JPanel();
         SubTotalButton = new javax.swing.JButton();
@@ -74,6 +73,11 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         FoodButton1 = new javax.swing.JButton();
         FoodButton4 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        ProductButton1 = new javax.swing.JButton();
+        ProductButton2 = new javax.swing.JButton();
+        ProductButton3 = new javax.swing.JButton();
+        ProductButton4 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         CloseButton = new javax.swing.JButton();
         SignInButton = new javax.swing.JButton();
@@ -173,19 +177,6 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-        );
-
-        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 679, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 233, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
@@ -300,13 +291,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        KeyboardButton.setBackground(new java.awt.Color(249, 249, 249));
-        KeyboardButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        KeyboardButton.setForeground(new java.awt.Color(35, 35, 35));
-        KeyboardButton.setText("Del");
-        KeyboardButton.addActionListener(new java.awt.event.ActionListener() {
+        DeleteButton.setBackground(new java.awt.Color(249, 249, 249));
+        DeleteButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DeleteButton.setForeground(new java.awt.Color(35, 35, 35));
+        DeleteButton.setText("Del");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KeyboardButtonActionPerformed(evt);
+                DeleteButtonActionPerformed(evt);
             }
         });
 
@@ -330,11 +321,11 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Button7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -372,7 +363,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -476,24 +467,99 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
+
+        ProductButton1.setBackground(new java.awt.Color(249, 249, 249));
+        ProductButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        ProductButton1.setForeground(new java.awt.Color(35, 35, 35));
+        ProductButton1.setText("Product 1");
+        ProductButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductButton1ActionPerformed(evt);
+            }
+        });
+
+        ProductButton2.setBackground(new java.awt.Color(249, 249, 249));
+        ProductButton2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        ProductButton2.setForeground(new java.awt.Color(35, 35, 35));
+        ProductButton2.setText("Product 2");
+        ProductButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductButton2ActionPerformed(evt);
+            }
+        });
+
+        ProductButton3.setBackground(new java.awt.Color(249, 249, 249));
+        ProductButton3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        ProductButton3.setForeground(new java.awt.Color(35, 35, 35));
+        ProductButton3.setText("Product 3");
+        ProductButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductButton3ActionPerformed(evt);
+            }
+        });
+
+        ProductButton4.setBackground(new java.awt.Color(249, 249, 249));
+        ProductButton4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        ProductButton4.setForeground(new java.awt.Color(35, 35, 35));
+        ProductButton4.setText("Product 4");
+        ProductButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ProductButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ProductButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ProductButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ProductButton4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProductButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ProductButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(187, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(FoodButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FoodButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(FoodButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FoodButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FoodButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FoodButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(FoodButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FoodButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94))
         );
 
@@ -554,7 +620,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(VoidButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DiscountButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addComponent(SignInButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CloseButton)
@@ -589,7 +655,6 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -602,8 +667,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(239, 239, 239)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -697,9 +761,9 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DotButtonActionPerformed
 
-    private void KeyboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KeyboardButtonActionPerformed
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_KeyboardButtonActionPerformed
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void FoodButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FoodButton4ActionPerformed
         // TODO add your handling code here:
@@ -731,7 +795,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         if (loginStatus == 1){
             user = contUser.getUser();
-            setTitle(user.getUsername()+"\t"+user.getRole());
+            setTitle(user.getUsername()+"\t\t"+user.getRole());
             clearTextField();
             showPassword();
         }
@@ -740,6 +804,22 @@ public class MainMenu extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_SignInButtonActionPerformed
+
+    private void ProductButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductButton1ActionPerformed
+
+    private void ProductButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductButton2ActionPerformed
+
+    private void ProductButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductButton3ActionPerformed
+
+    private void ProductButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -790,15 +870,19 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Button9;
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton CustomModifierButton;
+    private javax.swing.JButton DeleteButton;
     private javax.swing.JButton DineInButton;
     private javax.swing.JButton DiscountButton;
     private javax.swing.JButton DotButton;
     private javax.swing.JButton FoodButton1;
     private javax.swing.JButton FoodButton4;
     private javax.swing.JButton FunctionButton;
-    private javax.swing.JButton KeyboardButton;
     private javax.swing.JPasswordField PinForm;
     private javax.swing.JButton PrintBillButton;
+    private javax.swing.JButton ProductButton1;
+    private javax.swing.JButton ProductButton2;
+    private javax.swing.JButton ProductButton3;
+    private javax.swing.JButton ProductButton4;
     private javax.swing.JButton SignInButton;
     private javax.swing.JButton SubTotalButton;
     private javax.swing.JButton SubTotalButton1;
