@@ -37,7 +37,7 @@ public class SplashScreen extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(35, 35, 35));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/View/Logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\POS\\src\\main\\java\\org\\View\\Logo.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(249, 249, 249));
