@@ -4,6 +4,8 @@
  */
 package org.View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dreamvalian
@@ -48,8 +50,18 @@ public class SplashScreen extends javax.swing.JFrame {
         jLabel3.setText("The complete Food & Beverage Management System ");
 
         StartButton.setText("Start");
+        StartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartButtonActionPerformed(evt);
+            }
+        });
 
         CloseButton.setText("Close");
+        CloseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,6 +123,17 @@ public class SplashScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButtonActionPerformed
+        JOptionPane.showMessageDialog(null, "Program Dihentikan");
+        dispose();
+    }//GEN-LAST:event_CloseButtonActionPerformed
+
+    private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
+        MainMenu main = new MainMenu();
+        dispose();
+        main.setVisible(true);
+    }//GEN-LAST:event_StartButtonActionPerformed
 
     /**
      * @param args the command line arguments

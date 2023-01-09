@@ -4,17 +4,31 @@
  */
 package org.View;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import org.Controller.ControllerUser;
+import org.Model.Product;
+import org.Model.User;
+
 /**
  *
  * @author Dreamvalian
  */
 public class MainMenu extends javax.swing.JFrame {
 
+    static ControllerUser contUser;
+    static List<Product> listProduct;
+    static Product product;
+    static User user;
+    static int loginStatus = 0;
+    static String textValue = "";
     /**
      * Creates new form Splash
      */
     public MainMenu() {
-        setTitle("Main menu");
+//        PinForm.setEditable(false);
+        setTitle("Please Login to Proceed");
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -289,14 +303,12 @@ public class MainMenu extends javax.swing.JFrame {
         KeyboardButton.setBackground(new java.awt.Color(249, 249, 249));
         KeyboardButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         KeyboardButton.setForeground(new java.awt.Color(35, 35, 35));
-        KeyboardButton.setText("Key-board");
+        KeyboardButton.setText("Del");
         KeyboardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 KeyboardButtonActionPerformed(evt);
             }
         });
-
-        PinForm.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -321,7 +333,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,6 +508,11 @@ public class MainMenu extends javax.swing.JFrame {
         SignInButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         SignInButton.setForeground(new java.awt.Color(35, 35, 35));
         SignInButton.setText("Sign In");
+        SignInButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignInButtonActionPerformed(evt);
+            }
+        });
 
         DiscountButton.setBackground(new java.awt.Color(249, 249, 249));
         DiscountButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -595,44 +612,85 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void showPassword(){
+        String title = getTitle();
+        if(title.equals("Main menu") == false){
+            PinForm.setEchoChar((char)0);
+        }
+    }
+    
+    public void clearTextField(){
+        PinForm.setText("");
+    }
+    
     private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "7");
+        }
     }//GEN-LAST:event_Button7ActionPerformed
 
     private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "8");
+        }
     }//GEN-LAST:event_Button8ActionPerformed
 
     private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "9");
+        }
     }//GEN-LAST:event_Button9ActionPerformed
 
     private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "4");
+        }
     }//GEN-LAST:event_Button4ActionPerformed
 
     private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "5");
+        }
     }//GEN-LAST:event_Button5ActionPerformed
 
     private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "6");
+        }
     }//GEN-LAST:event_Button6ActionPerformed
 
     private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "3");
+        }
     }//GEN-LAST:event_Button3ActionPerformed
 
     private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "2");
+        }
     }//GEN-LAST:event_Button2ActionPerformed
 
     private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "1");
+        }
     }//GEN-LAST:event_Button1ActionPerformed
 
     private void Button0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button0ActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + "0");
+        }
     }//GEN-LAST:event_Button0ActionPerformed
 
     private void DotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DotButtonActionPerformed
@@ -666,6 +724,22 @@ public class MainMenu extends javax.swing.JFrame {
     private void SubTotalButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SubTotalButton1ActionPerformed
+
+    private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
+        contUser = new ControllerUser();
+        loginStatus = contUser.login(String.valueOf(PinForm.getPassword()));
+        
+        if (loginStatus == 1){
+            user = contUser.getUser();
+            setTitle(user.getUsername()+"\t"+user.getRole());
+            clearTextField();
+            showPassword();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Login Gagal");
+        }
+        
+    }//GEN-LAST:event_SignInButtonActionPerformed
 
     /**
      * @param args the command line arguments
