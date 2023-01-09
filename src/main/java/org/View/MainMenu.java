@@ -11,6 +11,7 @@ import org.Controller.ControllerProduct;
 import org.Controller.ControllerUser;
 import org.Model.Product;
 import org.Model.User;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  *
@@ -35,29 +36,55 @@ public class MainMenu extends javax.swing.JFrame {
         
         initComponents();
         Category1Button.setEnabled(false);
+        SubCategory1Button1.setEnabled(false);
+        SubCategory1Button2.setEnabled(false);
+        SubCategory1Button3.setEnabled(false);
+        SubCategory1Button4.setEnabled(false);
+        SubCategory1Button5.setEnabled(false);
+        
         Category2Button.setEnabled(false);
+        SubCategory2_1Button.setEnabled(false);
+        SubCategory2_1Button1.setEnabled(false);
+        SubCategory2_1Button2.setEnabled(false);
+        SubCategory2_1Button3.setEnabled(false);
+        SubCategory2_1Button4.setEnabled(false);
+        
+        SubCategory2_2Button.setEnabled(false);
+        SubCategory2_2Button1.setEnabled(false);
+        SubCategory2_2Button2.setEnabled(false);
+        SubCategory2_2Button3.setEnabled(false);
         this.setLocationRelativeTo(null);
     }
 
-    public void setFrame(String category){
+    public void setFrame(String subcategory){
         contProd = new ControllerProduct();
         listProduct = new ArrayList<>();
         
+        ProductButton1.setText("");
+        ProductButton2.setText("");
+        ProductButton3.setText("");
+        ProductButton4.setText("");
         
-        if(category.equals("Food")){
-            listProduct = contProd.getFood();
-            ProductButton1.setText(listProduct.get(0).getProduct_name());
-            ProductButton2.setText(listProduct.get(1).getProduct_name());
-            ProductButton3.setText(listProduct.get(2).getProduct_name());
-            ProductButton4.setText(listProduct.get(3).getProduct_name());
-        }
-        else if(category.equals("Beverage")){
-            listProduct = contProd.getBeverage();
-            ProductButton1.setText(listProduct.get(0).getProduct_name());
-            ProductButton2.setText(listProduct.get(1).getProduct_name());
-            ProductButton3.setText(listProduct.get(2).getProduct_name());
-            ProductButton4.setText(listProduct.get(3).getProduct_name());            
-        }
+        listProduct = contProd.getProduct(subcategory);
+        ProductButton1.setText(listProduct.get(0).getProduct_name());
+        ProductButton2.setText(listProduct.get(1).getProduct_name());
+        ProductButton3.setText(listProduct.get(2).getProduct_name());
+        ProductButton4.setText(listProduct.get(3).getProduct_name());
+        
+//        if(subcategory.equals("Pork")){
+//            listProduct = contProd.getFood();
+//            ProductButton1.setText(listProduct.get(0).getProduct_name());
+//            ProductButton2.setText(listProduct.get(1).getProduct_name());
+//            ProductButton3.setText(listProduct.get(2).getProduct_name());
+//            ProductButton4.setText(listProduct.get(3).getProduct_name());
+//        }
+//        else if(subcategory.equals("Coffee")){
+//            listProduct = contProd.getBeverage();
+//            ProductButton1.setText(listProduct.get(0).getProduct_name());
+//            ProductButton2.setText(listProduct.get(1).getProduct_name());
+//            ProductButton3.setText(listProduct.get(2).getProduct_name());
+//            ProductButton4.setText(listProduct.get(3).getProduct_name());            
+//        }
         
     }
     /**
@@ -112,7 +139,7 @@ public class MainMenu extends javax.swing.JFrame {
         SubCategory2_1Button1 = new javax.swing.JButton();
         SubCategory2_1Button2 = new javax.swing.JButton();
         SubCategory2_1Button3 = new javax.swing.JButton();
-        Category2_2Button2 = new javax.swing.JButton();
+        SubCategory2_2Button2 = new javax.swing.JButton();
         SubCategory2_2Button3 = new javax.swing.JButton();
         SubCategory2_1Button4 = new javax.swing.JButton();
         Category3Button1 = new javax.swing.JButton();
@@ -522,7 +549,7 @@ public class MainMenu extends javax.swing.JFrame {
         SubCategory1Button1.setBackground(new java.awt.Color(249, 249, 249));
         SubCategory1Button1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         SubCategory1Button1.setForeground(new java.awt.Color(35, 35, 35));
-        SubCategory1Button1.setText("Appetizer");
+        SubCategory1Button1.setText("Pork");
         SubCategory1Button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubCategory1Button1ActionPerformed(evt);
@@ -592,7 +619,7 @@ public class MainMenu extends javax.swing.JFrame {
         SubCategory2_2Button1.setBackground(new java.awt.Color(249, 249, 249));
         SubCategory2_2Button1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         SubCategory2_2Button1.setForeground(new java.awt.Color(35, 35, 35));
-        SubCategory2_2Button1.setText("Coffe & Tea");
+        SubCategory2_2Button1.setText("Coffee");
         SubCategory2_2Button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubCategory2_2Button1ActionPerformed(evt);
@@ -629,13 +656,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        Category2_2Button2.setBackground(new java.awt.Color(249, 249, 249));
-        Category2_2Button2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        Category2_2Button2.setForeground(new java.awt.Color(35, 35, 35));
-        Category2_2Button2.setText("Juice");
-        Category2_2Button2.addActionListener(new java.awt.event.ActionListener() {
+        SubCategory2_2Button2.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_2Button2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_2Button2.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_2Button2.setText("Juice");
+        SubCategory2_2Button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Category2_2Button2ActionPerformed(evt);
+                SubCategory2_2Button2ActionPerformed(evt);
             }
         });
 
@@ -695,7 +722,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(SubCategory2_1Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Category2_2Button2, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .addComponent(SubCategory2_2Button2, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                             .addComponent(SubCategory2_1Button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(6, 6, 6)
                         .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -729,7 +756,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(SubCategory1Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SubCategory2_2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SubCategory2_2Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Category2_2Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_2Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SubCategory2_2Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SubCategory1Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -748,6 +775,11 @@ public class MainMenu extends javax.swing.JFrame {
         CloseButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         CloseButton.setForeground(new java.awt.Color(35, 35, 35));
         CloseButton.setText("Close");
+        CloseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseButtonActionPerformed(evt);
+            }
+        });
 
         SignInButton.setBackground(new java.awt.Color(249, 249, 249));
         SignInButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -1000,15 +1032,35 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_Button0ActionPerformed
 
     private void DotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DotButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_DotButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 5 && textValue.length() > 0){
+            textValue = textValue.substring(0, textValue.length()-1);
+            PinForm.setText(textValue);
+        }
+        
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void Category1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category1ButtonActionPerformed
-        setFrame("Food");
+        SubCategory2_1Button.setEnabled(false);
+        SubCategory2_1Button1.setEnabled(false);
+        SubCategory2_1Button2.setEnabled(false);
+        SubCategory2_1Button3.setEnabled(false);
+        SubCategory2_1Button4.setEnabled(false);
+        
+        SubCategory2_2Button.setEnabled(false);
+        SubCategory2_2Button1.setEnabled(false);
+        SubCategory2_2Button2.setEnabled(false);
+        SubCategory2_2Button3.setEnabled(false);
+        
+        SubCategory1Button1.setEnabled(true);
+        SubCategory1Button2.setEnabled(true);
+        SubCategory1Button3.setEnabled(true);
+        SubCategory1Button4.setEnabled(true);
+        SubCategory1Button5.setEnabled(true);
     }//GEN-LAST:event_Category1ButtonActionPerformed
 
     private void SubTotalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButtonActionPerformed
@@ -1039,6 +1091,7 @@ public class MainMenu extends javax.swing.JFrame {
             user = contUser.getUser();
             setTitle(user.getUsername()+"\t\t"+user.getRole());
             clearTextField();
+            JOptionPane.showMessageDialog(null, "Login Berhasil");
             Category1Button.setEnabled(true);
             Category2Button.setEnabled(true);
             showPassword();
@@ -1066,68 +1119,89 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_ProductButton4ActionPerformed
 
     private void Category2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category2ButtonActionPerformed
-        setFrame("Beverage");
+        SubCategory1Button1.setEnabled(false);
+        SubCategory1Button2.setEnabled(false);
+        SubCategory1Button3.setEnabled(false);
+        SubCategory1Button4.setEnabled(false);
+        SubCategory1Button5.setEnabled(false);
+        
+        SubCategory2_1Button.setEnabled(true);
+        SubCategory2_1Button1.setEnabled(true);
+        SubCategory2_1Button2.setEnabled(true);
+        SubCategory2_1Button3.setEnabled(true);
+        SubCategory2_1Button4.setEnabled(true);
+        
+        SubCategory2_2Button.setEnabled(true);
+        SubCategory2_2Button1.setEnabled(true);
+        SubCategory2_2Button2.setEnabled(true);
+        SubCategory2_2Button3.setEnabled(true);
     }//GEN-LAST:event_Category2ButtonActionPerformed
 
     private void SubCategory1Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button1ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory1Button1.getText());
     }//GEN-LAST:event_SubCategory1Button1ActionPerformed
 
     private void SubCategory1Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button2ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory1Button2.getText());
     }//GEN-LAST:event_SubCategory1Button2ActionPerformed
 
     private void SubCategory1Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button3ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory1Button3.getText());
     }//GEN-LAST:event_SubCategory1Button3ActionPerformed
 
     private void SubCategory1Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button4ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory1Button4.getText());
     }//GEN-LAST:event_SubCategory1Button4ActionPerformed
 
     private void SubCategory1Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button5ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory1Button5.getText());
     }//GEN-LAST:event_SubCategory1Button5ActionPerformed
 
     private void SubCategory2_1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1ButtonActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_1Button.getText());
     }//GEN-LAST:event_SubCategory2_1ButtonActionPerformed
 
     private void SubCategory2_2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2ButtonActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_2Button.getText());
     }//GEN-LAST:event_SubCategory2_2ButtonActionPerformed
 
     private void SubCategory2_2Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2Button1ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_2Button1.getText());
     }//GEN-LAST:event_SubCategory2_2Button1ActionPerformed
 
     private void SubCategory2_1Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button1ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_1Button1.getText());
     }//GEN-LAST:event_SubCategory2_1Button1ActionPerformed
 
     private void SubCategory2_1Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button2ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_1Button2.getText());
     }//GEN-LAST:event_SubCategory2_1Button2ActionPerformed
 
     private void SubCategory2_1Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button3ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_1Button3.getText());
     }//GEN-LAST:event_SubCategory2_1Button3ActionPerformed
 
-    private void Category2_2Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category2_2Button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Category2_2Button2ActionPerformed
+    private void SubCategory2_2Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2Button2ActionPerformed
+        setFrame(SubCategory2_2Button2.getText());
+    }//GEN-LAST:event_SubCategory2_2Button2ActionPerformed
 
     private void SubCategory2_2Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2Button3ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_2Button3.getText());
     }//GEN-LAST:event_SubCategory2_2Button3ActionPerformed
 
     private void SubCategory2_1Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button4ActionPerformed
-        // TODO add your handling code here:
+        setFrame(SubCategory2_1Button4.getText());
     }//GEN-LAST:event_SubCategory2_1Button4ActionPerformed
 
     private void Category3Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category3Button1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Category3Button1ActionPerformed
+
+    private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButtonActionPerformed
+        SplashScreen splash = new SplashScreen();
+        dispose();
+        splash.setVisible(true);
+    }//GEN-LAST:event_CloseButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1179,7 +1253,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Button9;
     private javax.swing.JButton Category1Button;
     private javax.swing.JButton Category2Button;
-    private javax.swing.JButton Category2_2Button2;
     private javax.swing.JButton Category3Button1;
     private javax.swing.JPanel CategoryPanel;
     private javax.swing.JButton CloseButton;
@@ -1211,6 +1284,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton SubCategory2_1Button4;
     private javax.swing.JButton SubCategory2_2Button;
     private javax.swing.JButton SubCategory2_2Button1;
+    private javax.swing.JButton SubCategory2_2Button2;
     private javax.swing.JButton SubCategory2_2Button3;
     private javax.swing.JButton SubTotalButton;
     private javax.swing.JButton SubTotalButton1;
