@@ -69,7 +69,8 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        DiscountButton = new javax.swing.JButton();
+        TablePanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableOrder = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
@@ -77,7 +78,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel3 = new javax.swing.JPanel();
+        NumpadPanel = new javax.swing.JPanel();
         Button7 = new javax.swing.JButton();
         Button8 = new javax.swing.JButton();
         Button9 = new javax.swing.JButton();
@@ -91,33 +92,52 @@ public class MainMenu extends javax.swing.JFrame {
         DotButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
         PinForm = new javax.swing.JPasswordField();
-        jPanel4 = new javax.swing.JPanel();
+        FunctionPanel = new javax.swing.JPanel();
         SubTotalButton = new javax.swing.JButton();
         TableHoldButton = new javax.swing.JButton();
         ViewTransButton = new javax.swing.JButton();
         DineInButton = new javax.swing.JButton();
         SubTotalButton1 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        CategoryPanel = new javax.swing.JPanel();
         Category2Button = new javax.swing.JButton();
         Category1Button = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        SubCategory1Button1 = new javax.swing.JButton();
+        SubCategory1Button2 = new javax.swing.JButton();
+        SubCategory1Button3 = new javax.swing.JButton();
+        SubCategory1Button4 = new javax.swing.JButton();
+        SubCategory1Button5 = new javax.swing.JButton();
+        SubCategory2_1Button = new javax.swing.JButton();
+        SubCategory2_2Button = new javax.swing.JButton();
+        SubCategory2_2Button1 = new javax.swing.JButton();
+        SubCategory2_1Button1 = new javax.swing.JButton();
+        SubCategory2_1Button2 = new javax.swing.JButton();
+        SubCategory2_1Button3 = new javax.swing.JButton();
+        Category2_2Button2 = new javax.swing.JButton();
+        SubCategory2_2Button3 = new javax.swing.JButton();
+        SubCategory2_1Button4 = new javax.swing.JButton();
+        Category3Button1 = new javax.swing.JButton();
+        BottomFunctionPanel = new javax.swing.JPanel();
+        CloseButton = new javax.swing.JButton();
+        SignInButton = new javax.swing.JButton();
+        VoidButton = new javax.swing.JButton();
+        PrintBillButton = new javax.swing.JButton();
+        FunctionButton = new javax.swing.JButton();
+        CustomModifierButton = new javax.swing.JButton();
+        ProductPanel = new javax.swing.JPanel();
         ProductButton1 = new javax.swing.JButton();
         ProductButton2 = new javax.swing.JButton();
         ProductButton3 = new javax.swing.JButton();
         ProductButton4 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        CloseButton = new javax.swing.JButton();
-        SignInButton = new javax.swing.JButton();
-        DiscountButton = new javax.swing.JButton();
-        VoidButton = new javax.swing.JButton();
-        CustomModifierButton = new javax.swing.JButton();
-        PrintBillButton = new javax.swing.JButton();
-        FunctionButton = new javax.swing.JButton();
+
+        DiscountButton.setBackground(new java.awt.Color(249, 249, 249));
+        DiscountButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DiscountButton.setForeground(new java.awt.Color(35, 35, 35));
+        DiscountButton.setText("Discount");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(35, 35, 35));
 
-        jPanel1.setBackground(new java.awt.Color(71, 103, 237));
+        TablePanel.setBackground(new java.awt.Color(71, 103, 237));
 
         TableOrder.setBackground(new java.awt.Color(249, 249, 249));
         TableOrder.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -185,20 +205,20 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout TablePanelLayout = new javax.swing.GroupLayout(TablePanel);
+        TablePanel.setLayout(TablePanelLayout);
+        TablePanelLayout.setHorizontalGroup(
+            TablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TablePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        TablePanelLayout.setVerticalGroup(
+            TablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TablePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -206,7 +226,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 204));
+        NumpadPanel.setBackground(new java.awt.Color(255, 204, 204));
 
         Button7.setBackground(new java.awt.Color(249, 249, 249));
         Button7.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -328,73 +348,73 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout NumpadPanelLayout = new javax.swing.GroupLayout(NumpadPanel);
+        NumpadPanel.setLayout(NumpadPanelLayout);
+        NumpadPanelLayout.setHorizontalGroup(
+            NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NumpadPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PinForm)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NumpadPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(NumpadPanelLayout.createSequentialGroup()
                         .addComponent(Button0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(NumpadPanelLayout.createSequentialGroup()
+                        .addGroup(NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Button7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(NumpadPanelLayout.createSequentialGroup()
                                 .addComponent(Button5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Button6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NumpadPanelLayout.createSequentialGroup()
                                 .addComponent(Button8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Button9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        NumpadPanelLayout.setVerticalGroup(
+            NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NumpadPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PinForm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(NumpadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(249, 248, 113));
+        FunctionPanel.setBackground(new java.awt.Color(249, 248, 113));
 
         SubTotalButton.setBackground(new java.awt.Color(249, 249, 249));
         SubTotalButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -446,13 +466,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout FunctionPanelLayout = new javax.swing.GroupLayout(FunctionPanel);
+        FunctionPanel.setLayout(FunctionPanelLayout);
+        FunctionPanelLayout.setHorizontalGroup(
+            FunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FunctionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(FunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SubTotalButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                     .addComponent(TableHoldButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                     .addComponent(ViewTransButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
@@ -460,10 +480,10 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(SubTotalButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        FunctionPanelLayout.setVerticalGroup(
+            FunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FunctionPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(SubTotalButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SubTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -473,11 +493,11 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(ViewTransButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DineInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(249, 249, 249));
-        jPanel5.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        CategoryPanel.setBackground(new java.awt.Color(249, 249, 249));
+        CategoryPanel.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
 
         Category2Button.setBackground(new java.awt.Color(249, 249, 249));
         Category2Button.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -499,7 +519,301 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
+        SubCategory1Button1.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory1Button1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory1Button1.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory1Button1.setText("Appetizer");
+        SubCategory1Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory1Button1ActionPerformed(evt);
+            }
+        });
+
+        SubCategory1Button2.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory1Button2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory1Button2.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory1Button2.setText("Soup");
+        SubCategory1Button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory1Button2ActionPerformed(evt);
+            }
+        });
+
+        SubCategory1Button3.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory1Button3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory1Button3.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory1Button3.setText("Salad");
+        SubCategory1Button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory1Button3ActionPerformed(evt);
+            }
+        });
+
+        SubCategory1Button4.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory1Button4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory1Button4.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory1Button4.setText("Main Course");
+        SubCategory1Button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory1Button4ActionPerformed(evt);
+            }
+        });
+
+        SubCategory1Button5.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory1Button5.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory1Button5.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory1Button5.setText("Dessert");
+        SubCategory1Button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory1Button5ActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_1Button.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_1Button.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_1Button.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_1Button.setText("Alcoholic");
+        SubCategory2_1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_1ButtonActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_2Button.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_2Button.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_2Button.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_2Button.setText("Non-Alcoholic");
+        SubCategory2_2Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_2ButtonActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_2Button1.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_2Button1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_2Button1.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_2Button1.setText("Coffe & Tea");
+        SubCategory2_2Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_2Button1ActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_1Button1.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_1Button1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_1Button1.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_1Button1.setText("Spirit");
+        SubCategory2_1Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_1Button1ActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_1Button2.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_1Button2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_1Button2.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_1Button2.setText("Wine");
+        SubCategory2_1Button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_1Button2ActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_1Button3.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_1Button3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_1Button3.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_1Button3.setText("Liquor");
+        SubCategory2_1Button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_1Button3ActionPerformed(evt);
+            }
+        });
+
+        Category2_2Button2.setBackground(new java.awt.Color(249, 249, 249));
+        Category2_2Button2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Category2_2Button2.setForeground(new java.awt.Color(35, 35, 35));
+        Category2_2Button2.setText("Juice");
+        Category2_2Button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Category2_2Button2ActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_2Button3.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_2Button3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_2Button3.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_2Button3.setText("Mocktail");
+        SubCategory2_2Button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_2Button3ActionPerformed(evt);
+            }
+        });
+
+        SubCategory2_1Button4.setBackground(new java.awt.Color(249, 249, 249));
+        SubCategory2_1Button4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubCategory2_1Button4.setForeground(new java.awt.Color(35, 35, 35));
+        SubCategory2_1Button4.setText("Cocktail");
+        SubCategory2_1Button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubCategory2_1Button4ActionPerformed(evt);
+            }
+        });
+
+        Category3Button1.setBackground(new java.awt.Color(249, 249, 249));
+        Category3Button1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Category3Button1.setForeground(new java.awt.Color(35, 35, 35));
+        Category3Button1.setText("Other");
+        Category3Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Category3Button1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CategoryPanelLayout = new javax.swing.GroupLayout(CategoryPanel);
+        CategoryPanel.setLayout(CategoryPanelLayout);
+        CategoryPanelLayout.setHorizontalGroup(
+            CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CategoryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SubCategory1Button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SubCategory1Button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SubCategory1Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SubCategory1Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Category1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory1Button5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(CategoryPanelLayout.createSequentialGroup()
+                        .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Category2Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SubCategory2_1Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SubCategory2_2Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SubCategory2_2Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SubCategory2_1Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Category2_2Button2, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                            .addComponent(SubCategory2_1Button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CategoryPanelLayout.createSequentialGroup()
+                                .addComponent(SubCategory2_1Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SubCategory2_1Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(SubCategory2_2Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(CategoryPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Category3Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        CategoryPanelLayout.setVerticalGroup(
+            CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CategoryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Category2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Category1Button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubCategory1Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_1Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_1Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_1Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_1Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubCategory1Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_2Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Category2_2Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubCategory2_2Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SubCategory1Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SubCategory1Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(CategoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Category3Button1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(SubCategory1Button5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        BottomFunctionPanel.setBackground(new java.awt.Color(249, 249, 249));
+
+        CloseButton.setBackground(new java.awt.Color(249, 249, 249));
+        CloseButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        CloseButton.setForeground(new java.awt.Color(35, 35, 35));
+        CloseButton.setText("Close");
+
+        SignInButton.setBackground(new java.awt.Color(249, 249, 249));
+        SignInButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SignInButton.setForeground(new java.awt.Color(35, 35, 35));
+        SignInButton.setText("Sign In / OP");
+        SignInButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignInButtonActionPerformed(evt);
+            }
+        });
+
+        VoidButton.setBackground(new java.awt.Color(249, 249, 249));
+        VoidButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        VoidButton.setForeground(new java.awt.Color(35, 35, 35));
+        VoidButton.setText("Void");
+
+        PrintBillButton.setBackground(new java.awt.Color(249, 249, 249));
+        PrintBillButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        PrintBillButton.setForeground(new java.awt.Color(35, 35, 35));
+        PrintBillButton.setText("Print BIll");
+
+        FunctionButton.setBackground(new java.awt.Color(249, 249, 249));
+        FunctionButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        FunctionButton.setForeground(new java.awt.Color(35, 35, 35));
+        FunctionButton.setText("Function");
+
+        CustomModifierButton.setBackground(new java.awt.Color(249, 249, 249));
+        CustomModifierButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        CustomModifierButton.setForeground(new java.awt.Color(35, 35, 35));
+        CustomModifierButton.setText("Cust. Modifier");
+
+        javax.swing.GroupLayout BottomFunctionPanelLayout = new javax.swing.GroupLayout(BottomFunctionPanel);
+        BottomFunctionPanel.setLayout(BottomFunctionPanelLayout);
+        BottomFunctionPanelLayout.setHorizontalGroup(
+            BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BottomFunctionPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PrintBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FunctionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CustomModifierButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(VoidButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(SignInButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CloseButton)
+                .addContainerGap())
+        );
+        BottomFunctionPanelLayout.setVerticalGroup(
+            BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BottomFunctionPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(FunctionButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addComponent(CustomModifierButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addComponent(VoidButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(PrintBillButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(SignInButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CloseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        ProductPanel.setBackground(new java.awt.Color(255, 204, 204));
 
         ProductButton1.setBackground(new java.awt.Color(249, 249, 249));
         ProductButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -541,11 +855,11 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout ProductPanelLayout = new javax.swing.GroupLayout(ProductPanel);
+        ProductPanel.setLayout(ProductPanelLayout);
+        ProductPanelLayout.setHorizontalGroup(
+            ProductPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProductPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ProductButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -556,121 +870,16 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(ProductButton4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        ProductPanelLayout.setVerticalGroup(
+            ProductPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProductPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(ProductPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ProductButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ProductButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(199, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(Category1Button)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Category2Button)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Category2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Category1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94))
-        );
-
-        jPanel7.setBackground(new java.awt.Color(249, 249, 249));
-
-        CloseButton.setBackground(new java.awt.Color(249, 249, 249));
-        CloseButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        CloseButton.setForeground(new java.awt.Color(35, 35, 35));
-        CloseButton.setText("Close");
-
-        SignInButton.setBackground(new java.awt.Color(249, 249, 249));
-        SignInButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        SignInButton.setForeground(new java.awt.Color(35, 35, 35));
-        SignInButton.setText("Sign In");
-        SignInButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignInButtonActionPerformed(evt);
-            }
-        });
-
-        DiscountButton.setBackground(new java.awt.Color(249, 249, 249));
-        DiscountButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        DiscountButton.setForeground(new java.awt.Color(35, 35, 35));
-        DiscountButton.setText("Discount");
-
-        VoidButton.setBackground(new java.awt.Color(249, 249, 249));
-        VoidButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        VoidButton.setForeground(new java.awt.Color(35, 35, 35));
-        VoidButton.setText("Void");
-
-        CustomModifierButton.setBackground(new java.awt.Color(249, 249, 249));
-        CustomModifierButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        CustomModifierButton.setForeground(new java.awt.Color(35, 35, 35));
-        CustomModifierButton.setText("Cust. Modifier");
-
-        PrintBillButton.setBackground(new java.awt.Color(249, 249, 249));
-        PrintBillButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        PrintBillButton.setForeground(new java.awt.Color(35, 35, 35));
-        PrintBillButton.setText("Print BIll");
-
-        FunctionButton.setBackground(new java.awt.Color(249, 249, 249));
-        FunctionButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        FunctionButton.setForeground(new java.awt.Color(35, 35, 35));
-        FunctionButton.setText("Function");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PrintBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FunctionButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CustomModifierButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(VoidButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DiscountButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(SignInButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CloseButton)
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CloseButton, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                    .addComponent(SignInButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DiscountButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(VoidButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CustomModifierButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FunctionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PrintBillButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -680,29 +889,30 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NumpadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(FunctionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(CategoryPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BottomFunctionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ProductPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(FunctionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NumpadPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ProductPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(CategoryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BottomFunctionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -859,6 +1069,66 @@ public class MainMenu extends javax.swing.JFrame {
         setFrame("Beverage");
     }//GEN-LAST:event_Category2ButtonActionPerformed
 
+    private void SubCategory1Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory1Button1ActionPerformed
+
+    private void SubCategory1Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory1Button2ActionPerformed
+
+    private void SubCategory1Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory1Button3ActionPerformed
+
+    private void SubCategory1Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory1Button4ActionPerformed
+
+    private void SubCategory1Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory1Button5ActionPerformed
+
+    private void SubCategory2_1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_1ButtonActionPerformed
+
+    private void SubCategory2_2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_2ButtonActionPerformed
+
+    private void SubCategory2_2Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_2Button1ActionPerformed
+
+    private void SubCategory2_1Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_1Button1ActionPerformed
+
+    private void SubCategory2_1Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_1Button2ActionPerformed
+
+    private void SubCategory2_1Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_1Button3ActionPerformed
+
+    private void Category2_2Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category2_2Button2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Category2_2Button2ActionPerformed
+
+    private void SubCategory2_2Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2Button3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_2Button3ActionPerformed
+
+    private void SubCategory2_1Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1Button4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubCategory2_1Button4ActionPerformed
+
+    private void Category3Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category3Button1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Category3Button1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -896,6 +1166,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BottomFunctionPanel;
     private javax.swing.JButton Button0;
     private javax.swing.JButton Button1;
     private javax.swing.JButton Button2;
@@ -908,6 +1179,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Button9;
     private javax.swing.JButton Category1Button;
     private javax.swing.JButton Category2Button;
+    private javax.swing.JButton Category2_2Button2;
+    private javax.swing.JButton Category3Button1;
+    private javax.swing.JPanel CategoryPanel;
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton CustomModifierButton;
     private javax.swing.JButton DeleteButton;
@@ -915,29 +1189,40 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton DiscountButton;
     private javax.swing.JButton DotButton;
     private javax.swing.JButton FunctionButton;
+    private javax.swing.JPanel FunctionPanel;
+    private javax.swing.JPanel NumpadPanel;
     private javax.swing.JPasswordField PinForm;
     private javax.swing.JButton PrintBillButton;
     private javax.swing.JButton ProductButton1;
     private javax.swing.JButton ProductButton2;
     private javax.swing.JButton ProductButton3;
     private javax.swing.JButton ProductButton4;
+    private javax.swing.JPanel ProductPanel;
     private javax.swing.JButton SignInButton;
+    private javax.swing.JButton SubCategory1Button1;
+    private javax.swing.JButton SubCategory1Button2;
+    private javax.swing.JButton SubCategory1Button3;
+    private javax.swing.JButton SubCategory1Button4;
+    private javax.swing.JButton SubCategory1Button5;
+    private javax.swing.JButton SubCategory2_1Button;
+    private javax.swing.JButton SubCategory2_1Button1;
+    private javax.swing.JButton SubCategory2_1Button2;
+    private javax.swing.JButton SubCategory2_1Button3;
+    private javax.swing.JButton SubCategory2_1Button4;
+    private javax.swing.JButton SubCategory2_2Button;
+    private javax.swing.JButton SubCategory2_2Button1;
+    private javax.swing.JButton SubCategory2_2Button3;
     private javax.swing.JButton SubTotalButton;
     private javax.swing.JButton SubTotalButton1;
     private javax.swing.JButton TableHoldButton;
     private javax.swing.JTable TableOrder;
+    private javax.swing.JPanel TablePanel;
     private javax.swing.JButton ViewTransButton;
     private javax.swing.JButton VoidButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
