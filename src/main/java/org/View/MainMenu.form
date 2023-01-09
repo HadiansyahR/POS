@@ -271,12 +271,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="DotButton" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="KeyboardButton" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="DeleteButton" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Button7" max="32767" attributes="0"/>
-                              <Component id="Button4" max="32767" attributes="0"/>
+                              <Component id="Button7" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="Button4" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -325,7 +325,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Button0" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="DotButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="KeyboardButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="DeleteButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -520,7 +520,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DotButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="KeyboardButton">
+        <Component class="javax.swing.JButton" name="DeleteButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -534,7 +534,7 @@
             <Property name="text" type="java.lang.String" value="Del"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KeyboardButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="PinForm">
@@ -685,7 +685,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="FoodButton4" min="-2" max="-2" attributes="0"/>
+                  <Component id="FoodButton4" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="FoodButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
@@ -697,8 +697,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="FoodButton1" alignment="3" max="32767" attributes="0"/>
-                      <Component id="FoodButton4" alignment="3" max="32767" attributes="0"/>
+                      <Component id="FoodButton1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="FoodButton4" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
               </Group>

@@ -63,7 +63,7 @@ public class MainMenu extends javax.swing.JFrame {
         Button1 = new javax.swing.JButton();
         Button0 = new javax.swing.JButton();
         DotButton = new javax.swing.JButton();
-        KeyboardButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
         PinForm = new javax.swing.JPasswordField();
         jPanel4 = new javax.swing.JPanel();
         SubTotalButton = new javax.swing.JButton();
@@ -300,13 +300,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        KeyboardButton.setBackground(new java.awt.Color(249, 249, 249));
-        KeyboardButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        KeyboardButton.setForeground(new java.awt.Color(35, 35, 35));
-        KeyboardButton.setText("Del");
-        KeyboardButton.addActionListener(new java.awt.event.ActionListener() {
+        DeleteButton.setBackground(new java.awt.Color(249, 249, 249));
+        DeleteButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DeleteButton.setForeground(new java.awt.Color(35, 35, 35));
+        DeleteButton.setText("Del");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KeyboardButtonActionPerformed(evt);
+                DeleteButtonActionPerformed(evt);
             }
         });
 
@@ -330,11 +330,11 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Button7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Button4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Button7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -372,7 +372,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DotButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(KeyboardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -492,8 +492,8 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FoodButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FoodButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(FoodButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FoodButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94))
         );
 
@@ -697,9 +697,9 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DotButtonActionPerformed
 
-    private void KeyboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KeyboardButtonActionPerformed
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_KeyboardButtonActionPerformed
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void FoodButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FoodButton4ActionPerformed
         // TODO add your handling code here:
@@ -731,7 +731,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         if (loginStatus == 1){
             user = contUser.getUser();
-            setTitle(user.getUsername()+"\t"+user.getRole());
+            setTitle(user.getUsername()+"\t\t"+user.getRole());
             clearTextField();
             showPassword();
         }
@@ -790,13 +790,13 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Button9;
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton CustomModifierButton;
+    private javax.swing.JButton DeleteButton;
     private javax.swing.JButton DineInButton;
     private javax.swing.JButton DiscountButton;
     private javax.swing.JButton DotButton;
     private javax.swing.JButton FoodButton1;
     private javax.swing.JButton FoodButton4;
     private javax.swing.JButton FunctionButton;
-    private javax.swing.JButton KeyboardButton;
     private javax.swing.JPasswordField PinForm;
     private javax.swing.JButton PrintBillButton;
     private javax.swing.JButton SignInButton;
