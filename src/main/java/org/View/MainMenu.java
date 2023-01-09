@@ -50,11 +50,13 @@ public class MainMenu extends javax.swing.JFrame {
         Button0 = new javax.swing.JButton();
         DotButton = new javax.swing.JButton();
         KeyboardButton = new javax.swing.JButton();
+        PinForm = new javax.swing.JPasswordField();
         jPanel4 = new javax.swing.JPanel();
         SubTotalButton = new javax.swing.JButton();
         TableHoldButton = new javax.swing.JButton();
         ViewTransButton = new javax.swing.JButton();
         DineInButton = new javax.swing.JButton();
+        SubTotalButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         FoodButton1 = new javax.swing.JButton();
         FoodButton4 = new javax.swing.JButton();
@@ -294,6 +296,8 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        PinForm.setText("jPasswordField1");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -301,6 +305,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PinForm)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -335,6 +340,8 @@ public class MainMenu extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(PinForm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -399,6 +406,16 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        SubTotalButton1.setBackground(new java.awt.Color(249, 249, 249));
+        SubTotalButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SubTotalButton1.setForeground(new java.awt.Color(35, 35, 35));
+        SubTotalButton1.setText("Finalize Cash");
+        SubTotalButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubTotalButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -409,18 +426,21 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(SubTotalButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                     .addComponent(TableHoldButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                     .addComponent(ViewTransButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(DineInButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
+                    .addComponent(DineInButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(SubTotalButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(SubTotalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SubTotalButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TableHoldButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SubTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ViewTransButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TableHoldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ViewTransButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DineInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -643,6 +663,10 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DineInButtonActionPerformed
 
+    private void SubTotalButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubTotalButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -699,9 +723,11 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton FoodButton4;
     private javax.swing.JButton FunctionButton;
     private javax.swing.JButton KeyboardButton;
+    private javax.swing.JPasswordField PinForm;
     private javax.swing.JButton PrintBillButton;
     private javax.swing.JButton SignInButton;
     private javax.swing.JButton SubTotalButton;
+    private javax.swing.JButton SubTotalButton1;
     private javax.swing.JButton TableHoldButton;
     private javax.swing.JTable TableOrder;
     private javax.swing.JButton ViewTransButton;
