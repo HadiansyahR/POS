@@ -134,11 +134,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Start"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StartButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="CloseButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Close"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CloseButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

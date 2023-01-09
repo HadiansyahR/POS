@@ -9,10 +9,11 @@ import org.Model.User;
 
 public class ControllerUser {
     static String query = "";
+    static User user;
     
-    private int Login(int pin){
+    public int login(String pin){
         int loginStatus = 0;
-        User user = new User();
+        user = new User();
         
         ConnectionManager conMan = new ConnectionManager();
         Connection con = conMan.LogOn();
@@ -23,7 +24,7 @@ public class ControllerUser {
             ResultSet rs = stm.executeQuery(query);
             
             while(rs.next()){
-                if(rs.getInt("pin") == pin){
+                if(String.valueOf(rs.getInt("pin")).equals(pin)){
                     loginStatus = 1;
                     
                     user.setPin(rs.getInt("pin"));
@@ -43,4 +44,9 @@ public class ControllerUser {
         conMan.LogOff();
         return loginStatus;
     }
+
+    public static User getUser() {
+        return user;
+    }
+    
 }
