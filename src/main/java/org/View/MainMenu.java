@@ -7,6 +7,7 @@ package org.View;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import org.Controller.ControllerProduct;
 import org.Controller.ControllerUser;
 import org.Model.Product;
 import org.Model.User;
@@ -18,6 +19,8 @@ import org.Model.User;
 public class MainMenu extends javax.swing.JFrame {
 
     static ControllerUser contUser;
+    static ControllerProduct contProd;
+    
     static List<Product> listProduct;
     static Product product;
     static User user;
@@ -29,10 +32,34 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
 //        PinForm.setEditable(false);
         setTitle("Please Login to Proceed");
+        
         initComponents();
+        Category1Button.setEnabled(false);
+        Category2Button.setEnabled(false);
         this.setLocationRelativeTo(null);
     }
 
+    public void setFrame(String category){
+        contProd = new ControllerProduct();
+        listProduct = new ArrayList<>();
+        
+        
+        if(category.equals("Food")){
+            listProduct = contProd.getFood();
+            ProductButton1.setText(listProduct.get(0).getProduct_name());
+            ProductButton2.setText(listProduct.get(1).getProduct_name());
+            ProductButton3.setText(listProduct.get(2).getProduct_name());
+            ProductButton4.setText(listProduct.get(3).getProduct_name());
+        }
+        else if(category.equals("Beverage")){
+            listProduct = contProd.getBeverage();
+            ProductButton1.setText(listProduct.get(0).getProduct_name());
+            ProductButton2.setText(listProduct.get(1).getProduct_name());
+            ProductButton3.setText(listProduct.get(2).getProduct_name());
+            ProductButton4.setText(listProduct.get(3).getProduct_name());            
+        }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,8 +98,8 @@ public class MainMenu extends javax.swing.JFrame {
         DineInButton = new javax.swing.JButton();
         SubTotalButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        FoodButton1 = new javax.swing.JButton();
-        FoodButton4 = new javax.swing.JButton();
+        Category2Button = new javax.swing.JButton();
+        Category1Button = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         ProductButton1 = new javax.swing.JButton();
         ProductButton2 = new javax.swing.JButton();
@@ -452,18 +479,23 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(249, 249, 249));
         jPanel5.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
 
-        FoodButton1.setBackground(new java.awt.Color(249, 249, 249));
-        FoodButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        FoodButton1.setForeground(new java.awt.Color(35, 35, 35));
-        FoodButton1.setText("Beverages");
-
-        FoodButton4.setBackground(new java.awt.Color(249, 249, 249));
-        FoodButton4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        FoodButton4.setForeground(new java.awt.Color(35, 35, 35));
-        FoodButton4.setText("Food");
-        FoodButton4.addActionListener(new java.awt.event.ActionListener() {
+        Category2Button.setBackground(new java.awt.Color(249, 249, 249));
+        Category2Button.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Category2Button.setForeground(new java.awt.Color(35, 35, 35));
+        Category2Button.setText("Beverages");
+        Category2Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FoodButton4ActionPerformed(evt);
+                Category2ButtonActionPerformed(evt);
+            }
+        });
+
+        Category1Button.setBackground(new java.awt.Color(249, 249, 249));
+        Category1Button.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        Category1Button.setForeground(new java.awt.Color(35, 35, 35));
+        Category1Button.setText("Food");
+        Category1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Category1ButtonActionPerformed(evt);
             }
         });
 
@@ -544,9 +576,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(FoodButton4)
+                        .addComponent(Category1Button)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FoodButton1)
+                        .addComponent(Category2Button)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -558,8 +590,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FoodButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FoodButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Category2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Category1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94))
         );
 
@@ -765,9 +797,9 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
-    private void FoodButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FoodButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FoodButton4ActionPerformed
+    private void Category1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category1ButtonActionPerformed
+        setFrame("Food");
+    }//GEN-LAST:event_Category1ButtonActionPerformed
 
     private void SubTotalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButtonActionPerformed
         // TODO add your handling code here:
@@ -797,6 +829,8 @@ public class MainMenu extends javax.swing.JFrame {
             user = contUser.getUser();
             setTitle(user.getUsername()+"\t\t"+user.getRole());
             clearTextField();
+            Category1Button.setEnabled(true);
+            Category2Button.setEnabled(true);
             showPassword();
         }
         else{
@@ -820,6 +854,10 @@ public class MainMenu extends javax.swing.JFrame {
     private void ProductButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ProductButton4ActionPerformed
+
+    private void Category2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category2ButtonActionPerformed
+        setFrame("Beverage");
+    }//GEN-LAST:event_Category2ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -868,14 +906,14 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Button7;
     private javax.swing.JButton Button8;
     private javax.swing.JButton Button9;
+    private javax.swing.JButton Category1Button;
+    private javax.swing.JButton Category2Button;
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton CustomModifierButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton DineInButton;
     private javax.swing.JButton DiscountButton;
     private javax.swing.JButton DotButton;
-    private javax.swing.JButton FoodButton1;
-    private javax.swing.JButton FoodButton4;
     private javax.swing.JButton FunctionButton;
     private javax.swing.JPasswordField PinForm;
     private javax.swing.JButton PrintBillButton;
