@@ -703,7 +703,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Category2_2Button2" pref="142" max="32767" attributes="0"/>
+                              <Component id="SubCategory2_2Button2" pref="142" max="32767" attributes="0"/>
                               <Component id="SubCategory2_1Button2" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
@@ -747,7 +747,7 @@
                       <Component id="SubCategory1Button2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="SubCategory2_2Button" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="SubCategory2_2Button1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="Category2_2Button2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="SubCategory2_2Button2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="SubCategory2_2Button3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -810,7 +810,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="23" green="23" red="23" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Appetizer"/>
+            <Property name="text" type="java.lang.String" value="Pork"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubCategory1Button1ActionPerformed"/>
@@ -929,7 +929,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="23" green="23" red="23" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Coffe &amp; Tea"/>
+            <Property name="text" type="java.lang.String" value="Coffee"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubCategory2_2Button1ActionPerformed"/>
@@ -986,7 +986,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubCategory2_1Button3ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Category2_2Button2">
+        <Component class="javax.swing.JButton" name="SubCategory2_2Button2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -1000,7 +1000,7 @@
             <Property name="text" type="java.lang.String" value="Juice"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Category2_2Button2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SubCategory2_2Button2ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="SubCategory2_2Button3">
@@ -1116,6 +1116,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Close"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CloseButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="SignInButton">
           <Properties>
