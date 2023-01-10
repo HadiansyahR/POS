@@ -4,10 +4,13 @@
  */
 package org.View;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import org.Controller.ControllerProduct;
 import org.Controller.ControllerTransaction;
 import org.Controller.ControllerUser;
@@ -28,6 +31,7 @@ public class MainMenu extends javax.swing.JFrame {
     static List<Product> listProduct;
     static Product product;
     
+//    static List<Transaction> listTransaction = new ArrayList<>();
     static List<Transaction> listTransaction;
     static Transaction transaction;
     
@@ -1001,6 +1005,21 @@ public class MainMenu extends javax.swing.JFrame {
         PinForm.setText("");
     }
     
+    
+    //method di baris 1005 - 1017 buat ngetes doang
+    public void printOrder(List<Transaction> listTransaction){
+        for(Transaction trans: listTransaction){
+            System.out.println(trans.getTransaction_id());
+            System.out.println(trans.getTable_num());
+            System.out.println(trans.getProduct_name());
+            System.out.println(trans.getQuantity());
+            System.out.println(trans.getPrice());
+            System.out.println(trans.getSubtotal());
+            System.out.println(trans.getTransaction_date());
+            System.out.println(trans.getPayment_status());
+        }
+    }
+    
     private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
         textValue = String.valueOf(PinForm.getPassword());
         if(textValue.length() < 4){
@@ -1117,11 +1136,60 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_SubTotalButtonActionPerformed
 
     private void TableHoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableHoldButtonActionPerformed
-        // TODO add your handling code here:
+        TableModel model = TableOrder.getModel();
+        
+        contTrans = new ControllerTransaction();
+        listTransaction = new ArrayList<>();
+        
+        int insertStatus = 0;
+        int row = model.getRowCount();
+        int trans_id = contTrans.countTransactionRow();
+        LocalDate trans_date = LocalDate.now();
+//        DateTimeFormatter dateformat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        if(row != 0){
+            if(tableNum.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Harap Masukkan Data Table");
+            }else{
+                for(int i = 0; i<row; i++){
+                    product = contProd.getProduct(model.getValueAt(i, 1).toString());
+
+                    transaction = new Transaction();
+
+                    transaction.setTransaction_id(trans_id+1);
+                    transaction.setTable_num(tableNum);
+                    transaction.setProduct_name(product.getProduct_name());
+                    transaction.setQuantity(Integer.parseInt(model.getValueAt(i, 0).toString()));
+                    transaction.setPrice(product.getPrice());
+                    transaction.setSubtotal(Double.parseDouble(model.getValueAt(i, 2).toString()));
+        //            transaction.setTransaction_date(trans_date.format(dateformat));
+                    transaction.setTransaction_date(trans_date.toString());
+                    transaction.setPayment_status(0);
+
+                    listTransaction.add(transaction);            
+                }
+
+                insertStatus = contTrans.insertTransaction(listTransaction);
+
+                if(insertStatus == 1){
+                    JOptionPane.showMessageDialog(null, "Order Berhasil Dilakukan");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Order Gagal");
+                }
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Data Pesanan Kosong");
+        }
+        
+        
+        
+//        printOrder(listTransaction);
+        
     }//GEN-LAST:event_TableHoldButtonActionPerformed
 
     private void ViewTransButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTransButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_ViewTransButtonActionPerformed
 
     private void DineInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DineInButtonActionPerformed
