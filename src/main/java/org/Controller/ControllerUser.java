@@ -25,12 +25,17 @@ public class ControllerUser {
             
             while(rs.next()){
                 if(String.valueOf(rs.getInt("pin")).equals(pin)){
-                    loginStatus = 1;
-                    
+                    if(rs.getString("role").equals("Admin")){
+                        loginStatus = 1;
+                    }else if(rs.getString("role").equals("Waiter")){
+                        loginStatus = 2;
+                    }else{
+                        loginStatus = 3;
+                    }
+                                       
                     user.setPin(rs.getInt("pin"));
                     user.setUsername(rs.getString("username"));
                     user.setRole(rs.getString("role"));
-                    
                     
                 }
                 else{

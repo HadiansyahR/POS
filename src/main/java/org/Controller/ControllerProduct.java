@@ -19,11 +19,11 @@ import org.Model.Product;
 public class ControllerProduct {
     static String query;
     
-    public List<Product> getProduct(String subcategory){
+    public List<Product> getProductsByCategory(String subcategory){
         ConnectionManager conMan = new ConnectionManager();
         Connection con = conMan.LogOn();
         List<Product> listProduct = new ArrayList<Product>();
-        query = "SELECT * FROM product WHERE sub_category = '"+subcategory+"'";
+        query = "SELECT * FROM product WHERE sub_category = '"+subcategory+"' && quantity > 0";
         
         try{
             Statement stm = con.createStatement();
@@ -45,6 +45,31 @@ public class ControllerProduct {
         }
         conMan.LogOff();
         return listProduct;
+    }
+    
+    public Product getProduct(String name){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        query = "SELECT * FROM product WHERE product_name = '"+name+"'";
+        Product product = new Product();
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs;
+            rs = stm.executeQuery(query);
+            while(rs.next()){
+                product.setProduct_id(rs.getString("product_id"));
+                product.setProduct_name(rs.getString("product_name"));
+                product.setCategory(rs.getString("category"));
+                product.setSub_category(rs.getString("sub_category"));
+                product.setPrice(rs.getDouble("price"));
+                product.setQuantity(rs.getInt("quantity"));
+            }           
+        }catch(Exception ex){
+            System.out.println(ex.toString());
+            conMan.LogOff();
+        }
+        conMan.LogOff();
+        return product;
     }
     
 //    public List<Product> getFood(){
