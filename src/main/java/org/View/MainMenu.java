@@ -11,7 +11,6 @@ import org.Controller.ControllerProduct;
 import org.Controller.ControllerUser;
 import org.Model.Product;
 import org.Model.User;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  *
@@ -122,9 +121,9 @@ public class MainMenu extends javax.swing.JFrame {
         FunctionPanel = new javax.swing.JPanel();
         SubTotalButton = new javax.swing.JButton();
         TableHoldButton = new javax.swing.JButton();
+        TakeawayButton = new javax.swing.JButton();
         ViewTransButton = new javax.swing.JButton();
         DineInButton = new javax.swing.JButton();
-        SubTotalButton1 = new javax.swing.JButton();
         CategoryPanel = new javax.swing.JPanel();
         Category2Button = new javax.swing.JButton();
         Category1Button = new javax.swing.JButton();
@@ -149,7 +148,6 @@ public class MainMenu extends javax.swing.JFrame {
         VoidButton = new javax.swing.JButton();
         PrintBillButton = new javax.swing.JButton();
         FunctionButton = new javax.swing.JButton();
-        CustomModifierButton = new javax.swing.JButton();
         ProductPanel = new javax.swing.JPanel();
         ProductButton1 = new javax.swing.JButton();
         ProductButton2 = new javax.swing.JButton();
@@ -463,6 +461,16 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        TakeawayButton.setBackground(new java.awt.Color(249, 249, 249));
+        TakeawayButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        TakeawayButton.setForeground(new java.awt.Color(35, 35, 35));
+        TakeawayButton.setText("Take Away");
+        TakeawayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TakeawayButtonActionPerformed(evt);
+            }
+        });
+
         ViewTransButton.setBackground(new java.awt.Color(249, 249, 249));
         ViewTransButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         ViewTransButton.setForeground(new java.awt.Color(35, 35, 35));
@@ -483,16 +491,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        SubTotalButton1.setBackground(new java.awt.Color(249, 249, 249));
-        SubTotalButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        SubTotalButton1.setForeground(new java.awt.Color(35, 35, 35));
-        SubTotalButton1.setText("Finalize Cash");
-        SubTotalButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SubTotalButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout FunctionPanelLayout = new javax.swing.GroupLayout(FunctionPanel);
         FunctionPanel.setLayout(FunctionPanelLayout);
         FunctionPanelLayout.setHorizontalGroup(
@@ -502,25 +500,25 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(FunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SubTotalButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                     .addComponent(TableHoldButton, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(ViewTransButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(DineInButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                    .addComponent(SubTotalButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
+                    .addComponent(TakeawayButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(ViewTransButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DineInButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
                 .addContainerGap())
         );
         FunctionPanelLayout.setVerticalGroup(
             FunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FunctionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SubTotalButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SubTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TableHoldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ViewTransButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TableHoldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DineInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TakeawayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         CategoryPanel.setBackground(new java.awt.Color(249, 249, 249));
@@ -730,9 +728,9 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addComponent(SubCategory2_1Button3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SubCategory2_1Button4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(SubCategory2_2Button3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(SubCategory2_2Button3, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)))
                     .addGroup(CategoryPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Category3Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -806,11 +804,6 @@ public class MainMenu extends javax.swing.JFrame {
         FunctionButton.setForeground(new java.awt.Color(35, 35, 35));
         FunctionButton.setText("Function");
 
-        CustomModifierButton.setBackground(new java.awt.Color(249, 249, 249));
-        CustomModifierButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        CustomModifierButton.setForeground(new java.awt.Color(35, 35, 35));
-        CustomModifierButton.setText("Cust. Modifier");
-
         javax.swing.GroupLayout BottomFunctionPanelLayout = new javax.swing.GroupLayout(BottomFunctionPanel);
         BottomFunctionPanel.setLayout(BottomFunctionPanelLayout);
         BottomFunctionPanelLayout.setHorizontalGroup(
@@ -821,10 +814,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FunctionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CustomModifierButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VoidButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(SignInButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CloseButton)
@@ -837,7 +828,6 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FunctionButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                        .addComponent(CustomModifierButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                         .addComponent(VoidButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
                     .addComponent(PrintBillButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(SignInButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1079,9 +1069,9 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DineInButtonActionPerformed
 
-    private void SubTotalButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButton1ActionPerformed
+    private void TakeawayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TakeawayButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SubTotalButton1ActionPerformed
+    }//GEN-LAST:event_TakeawayButtonActionPerformed
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
         contUser = new ControllerUser();
@@ -1256,7 +1246,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton Category3Button1;
     private javax.swing.JPanel CategoryPanel;
     private javax.swing.JButton CloseButton;
-    private javax.swing.JButton CustomModifierButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton DineInButton;
     private javax.swing.JButton DiscountButton;
@@ -1287,10 +1276,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton SubCategory2_2Button2;
     private javax.swing.JButton SubCategory2_2Button3;
     private javax.swing.JButton SubTotalButton;
-    private javax.swing.JButton SubTotalButton1;
     private javax.swing.JButton TableHoldButton;
     private javax.swing.JTable TableOrder;
     private javax.swing.JPanel TablePanel;
+    private javax.swing.JButton TakeawayButton;
     private javax.swing.JButton ViewTransButton;
     private javax.swing.JButton VoidButton;
     private javax.swing.JLabel jLabel1;
