@@ -7,9 +7,12 @@ package org.View;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import org.Controller.ControllerProduct;
+import org.Controller.ControllerTransaction;
 import org.Controller.ControllerUser;
 import org.Model.Product;
+import org.Model.Transaction;
 import org.Model.User;
 
 /**
@@ -20,12 +23,21 @@ public class MainMenu extends javax.swing.JFrame {
 
     static ControllerUser contUser;
     static ControllerProduct contProd;
+    static ControllerTransaction contTrans;
     
     static List<Product> listProduct;
     static Product product;
+    
+    static List<Transaction> listTransaction;
+    static Transaction transaction;
+    
     static User user;
+    
     static int loginStatus = 0;
     static String textValue = "";
+    static String tableNum = "";
+    
+    private DefaultTableModel model;
     /**
      * Creates new form Splash
      */
@@ -34,6 +46,25 @@ public class MainMenu extends javax.swing.JFrame {
         setTitle("Please Login to Proceed");
         
         initComponents();
+        tableNum = "";
+        loginStatus = 0;
+        
+        model = new DefaultTableModel();
+        TableOrder.setModel(model);
+        model.addColumn("Qty");
+        model.addColumn("Description");
+        model.addColumn("Amount");
+                
+        SubTotalButton.setEnabled(false);
+        ViewTransButton.setEnabled(false);
+        TableHoldButton.setEnabled(false);
+        DineInButton.setEnabled(false);
+        TakeawayButton.setEnabled(false);
+        
+        PrintBillButton.setEnabled(false);
+        FunctionButton.setEnabled(false);
+        VoidButton.setEnabled(false);
+                
         Category1Button.setEnabled(false);
         SubCategory1Button1.setEnabled(false);
         SubCategory1Button2.setEnabled(false);
@@ -52,9 +83,28 @@ public class MainMenu extends javax.swing.JFrame {
         SubCategory2_2Button1.setEnabled(false);
         SubCategory2_2Button2.setEnabled(false);
         SubCategory2_2Button3.setEnabled(false);
+        
+        ProductButton1.setEnabled(false);
+        ProductButton2.setEnabled(false);
+        ProductButton3.setEnabled(false);
+        ProductButton4.setEnabled(false);
+        
         this.setLocationRelativeTo(null);
     }
-
+    
+    public void setTable(String quantity, Product product){
+        DefaultTableModel dtm = (DefaultTableModel) TableOrder.getModel();
+        
+        String[] data = new String[5];
+        double amount = Integer.parseInt(quantity) * product.getPrice();
+        
+        data[0] = quantity;
+        data[1] = product.getProduct_name();
+        data[2] = String.valueOf(amount);
+        
+        dtm.addRow(data);
+    }
+    
     public void setFrame(String subcategory){
         contProd = new ControllerProduct();
         listProduct = new ArrayList<>();
@@ -64,7 +114,7 @@ public class MainMenu extends javax.swing.JFrame {
         ProductButton3.setText("");
         ProductButton4.setText("");
         
-        listProduct = contProd.getProduct(subcategory);
+        listProduct = contProd.getProductsByCategory(subcategory);
         ProductButton1.setText(listProduct.get(0).getProduct_name());
         ProductButton2.setText(listProduct.get(1).getProduct_name());
         ProductButton3.setText(listProduct.get(2).getProduct_name());
@@ -1051,6 +1101,15 @@ public class MainMenu extends javax.swing.JFrame {
         SubCategory1Button3.setEnabled(true);
         SubCategory1Button4.setEnabled(true);
         SubCategory1Button5.setEnabled(true);
+        
+        ProductButton1.setEnabled(true);
+        ProductButton1.setText("");
+        ProductButton2.setEnabled(true);
+        ProductButton2.setText("");
+        ProductButton3.setEnabled(true);
+        ProductButton3.setText("");
+        ProductButton4.setEnabled(true);
+        ProductButton4.setText("");
     }//GEN-LAST:event_Category1ButtonActionPerformed
 
     private void SubTotalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButtonActionPerformed
@@ -1066,24 +1125,51 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_ViewTransButtonActionPerformed
 
     private void DineInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DineInButtonActionPerformed
-        // TODO add your handling code here:
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Masukkan Nomor Tabel!!!");
+        }else{
+            tableNum = textValue;
+            setTitle(user.getUsername()+"\t"+user.getRole()+"\tTable: "+tableNum);
+        }
     }//GEN-LAST:event_DineInButtonActionPerformed
 
     private void TakeawayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TakeawayButtonActionPerformed
-        // TODO add your handling code here:
+        tableNum = "TA";
+        setTitle(user.getUsername()+"\t"+user.getRole()+"\tTable: "+tableNum);
     }//GEN-LAST:event_TakeawayButtonActionPerformed
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
         contUser = new ControllerUser();
         loginStatus = contUser.login(String.valueOf(PinForm.getPassword()));
         
-        if (loginStatus == 1){
+        if (loginStatus > 0){
             user = contUser.getUser();
-            setTitle(user.getUsername()+"\t\t"+user.getRole());
+            setTitle(user.getUsername()+"\t"+user.getRole()+"\tTable: "+tableNum);
             clearTextField();
             JOptionPane.showMessageDialog(null, "Login Berhasil");
             Category1Button.setEnabled(true);
             Category2Button.setEnabled(true);
+            SubTotalButton.setEnabled(true);
+            ViewTransButton.setEnabled(true);
+            TableHoldButton.setEnabled(true);
+            DineInButton.setEnabled(true);
+            TakeawayButton.setEnabled(true);
+            
+            if (loginStatus == 1){
+                PrintBillButton.setEnabled(true);
+                FunctionButton.setEnabled(true);
+                VoidButton.setEnabled(true);
+            }else if (loginStatus == 2){
+                PrintBillButton.setEnabled(true);
+                FunctionButton.setEnabled(false);
+                VoidButton.setEnabled(false);
+            }else if (loginStatus == 3){
+                PrintBillButton.setEnabled(true);
+                FunctionButton.setEnabled(false);
+                VoidButton.setEnabled(true);
+            }
+            
             showPassword();
         }
         else{
@@ -1093,19 +1179,83 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_SignInButtonActionPerformed
 
     private void ProductButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton1ActionPerformed
-        // TODO add your handling code here:
+        product = new Product();
+        product = contProd.getProduct(ProductButton1.getText());
+        
+//        System.out.println(ProductButton1.getText());
+//        System.out.println(product.getProduct_name());
+        
+        String quantity = String.valueOf(PinForm.getPassword());
+        
+        if(ProductButton1.getText().isEmpty() == false){
+            if(quantity.isEmpty()){
+            setTable("1", product);
+            }
+            else{
+                setTable(quantity, product);
+            }
+        }
+        
+//        if(product != null){
+//            JOptionPane.showMessageDialog(null, "Produk ada");
+//        }
     }//GEN-LAST:event_ProductButton1ActionPerformed
 
     private void ProductButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton2ActionPerformed
-        // TODO add your handling code here:
+        product = new Product(); 
+        product = contProd.getProduct(ProductButton2.getText());
+        
+//        System.out.println(ProductButton2.getText());
+//        System.out.println(product.getProduct_name());
+        
+        String quantity = String.valueOf(PinForm.getPassword());
+        
+        if(ProductButton2.getText().isEmpty() == false){
+            if(quantity.isEmpty()){
+            setTable("1", product);
+            }
+            else{
+                setTable(quantity, product);
+            }
+        }
     }//GEN-LAST:event_ProductButton2ActionPerformed
 
     private void ProductButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton3ActionPerformed
-        // TODO add your handling code here:
+        product = new Product(); 
+        product = contProd.getProduct(ProductButton3.getText());
+        
+//        System.out.println(ProductButton2.getText());
+//        System.out.println(product.getProduct_name());
+        
+        String quantity = String.valueOf(PinForm.getPassword());
+        if(ProductButton3.getText().isEmpty() == false){
+            if(quantity.isEmpty()){
+            setTable("1", product);
+            }
+            else{
+                setTable(quantity, product);
+            }
+        }
+        
     }//GEN-LAST:event_ProductButton3ActionPerformed
 
     private void ProductButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductButton4ActionPerformed
-        // TODO add your handling code here:
+        product = new Product(); 
+        product = contProd.getProduct(ProductButton4.getText());
+        
+//        System.out.println(ProductButton2.getText());
+//        System.out.println(product.getProduct_name());
+        
+        String quantity = String.valueOf(PinForm.getPassword());
+        
+        if(ProductButton4.getText().isEmpty() == false){
+            if(quantity.isEmpty()){
+            setTable("1", product);
+            }
+            else{
+                setTable(quantity, product);
+            }
+        }
     }//GEN-LAST:event_ProductButton4ActionPerformed
 
     private void Category2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Category2ButtonActionPerformed
@@ -1125,6 +1275,15 @@ public class MainMenu extends javax.swing.JFrame {
         SubCategory2_2Button1.setEnabled(true);
         SubCategory2_2Button2.setEnabled(true);
         SubCategory2_2Button3.setEnabled(true);
+        
+        ProductButton1.setEnabled(true);
+        ProductButton1.setText("");
+        ProductButton2.setEnabled(true);
+        ProductButton2.setText("");
+        ProductButton3.setEnabled(true);
+        ProductButton3.setText("");
+        ProductButton4.setEnabled(true);
+        ProductButton4.setText("");
     }//GEN-LAST:event_Category2ButtonActionPerformed
 
     private void SubCategory1Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory1Button1ActionPerformed

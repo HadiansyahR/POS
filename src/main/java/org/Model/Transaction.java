@@ -16,6 +16,7 @@ public class Transaction {
     private int payment_status;
     private String product_name;
     private String transaction_date;
+    private String table_num;
     private double price;
     private double subtotal;
 
@@ -47,6 +48,14 @@ public class Transaction {
         this.transaction_id = transaction_id;
     }
 
+    public String getTable_num() {
+        return table_num;
+    }
+
+    public void setTable_num(String table_num) {
+        this.table_num = table_num;
+    }
+    
     /**
      * @return the quantity
      */

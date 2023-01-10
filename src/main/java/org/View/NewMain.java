@@ -1,23 +1,27 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package org.Controller;
+package org.View;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import org.ConnectionManager.ConnectionManager;
+import org.Model.Product;
 
 /**
  *
  * @author Acer
  */
-public class ControllerTransaction {
-    static String query;
-    
-    public int countTransactionRow(){
-        int row = 0;
+public class NewMain {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String query;
+        int i = 0;
         ConnectionManager conMan = new ConnectionManager();
         Connection con = conMan.LogOn();
         query = "SELECT transaction_id FROM transaction GROUP BY transaction_id";
@@ -27,7 +31,7 @@ public class ControllerTransaction {
             ResultSet rs;
             rs = stm.executeQuery(query);
             while(rs.next()){
-                row++;
+                i++;
             }
         }catch(Exception ex){
             System.out.println(ex.toString());
@@ -35,8 +39,7 @@ public class ControllerTransaction {
         }
         conMan.LogOff();
         
-        return row;
+        System.out.println(i);
     }
     
-//    public 
 }
