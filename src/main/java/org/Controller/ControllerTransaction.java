@@ -131,5 +131,34 @@ public class ControllerTransaction {
         
         return listTransactionGroup;
     }
+    
+    public TransactionGroup findTransaction(int transaction_id){
+        TransactionGroup transGroup = new TransactionGroup();
+        
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        query = "SELECT transaction_id, table_num, SUM(subtotal) as total, transaction_date, payment_status"
+                + " from transaction WHERE transaction_id = "+transaction_id;
+        
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs;
+            rs = stm.executeQuery(query);
+            
+            while(rs.next()){
+                transGroup.setTransaction_id(rs.getInt("transaction_id"));
+                transGroup.setTable_num(rs.getString("table_num"));
+                transGroup.setTotal(rs.getDouble("total"));
+                transGroup.setTransaction_date(rs.getString("transaction_date"));
+                transGroup.setPayment_status(rs.getInt("payment_status"));
+            }
+        }catch(Exception ex){
+            System.out.println(ex.toString());
+            conMan.LogOff();
+        }
+        
+        return transGroup;
+    }
 
 }
