@@ -38,6 +38,11 @@ public class MainMenu extends javax.swing.JFrame {
     static User user;
     
     static int loginStatus = 0;
+    static int orderRow;
+    
+    static double totalBill;
+    static final double tax = 0.21;
+    
     static String textValue = "";
     static String tableNum = "";
     
@@ -68,7 +73,8 @@ public class MainMenu extends javax.swing.JFrame {
         PrintBillButton.setEnabled(false);
         FunctionButton.setEnabled(false);
         VoidButton.setEnabled(false);
-                
+        DiscountBtn.setEnabled(false);
+        
         Category1Button.setEnabled(false);
         SubCategory1Button1.setEnabled(false);
         SubCategory1Button2.setEnabled(false);
@@ -92,6 +98,10 @@ public class MainMenu extends javax.swing.JFrame {
         ProductButton2.setEnabled(false);
         ProductButton3.setEnabled(false);
         ProductButton4.setEnabled(false);
+        
+        SubTotalField.setText("0.0");
+        DiscountField.setText("0.0");
+        TotalField.setText("0.0");
         
         this.setLocationRelativeTo(null);
     }
@@ -153,14 +163,14 @@ public class MainMenu extends javax.swing.JFrame {
         TablePanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableOrder = new javax.swing.JTable();
-        DiscountField = new javax.swing.JPanel();
+        BillPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         SubTotalField = new javax.swing.JTextField();
         TotalField = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        DiscountField = new javax.swing.JTextField();
         NumpadPanel = new javax.swing.JPanel();
         Button7 = new javax.swing.JButton();
         Button8 = new javax.swing.JButton();
@@ -205,6 +215,7 @@ public class MainMenu extends javax.swing.JFrame {
         VoidButton = new javax.swing.JButton();
         PrintBillButton = new javax.swing.JButton();
         FunctionButton = new javax.swing.JButton();
+        DiscountBtn = new javax.swing.JButton();
         ProductPanel = new javax.swing.JPanel();
         ProductButton1 = new javax.swing.JButton();
         ProductButton2 = new javax.swing.JButton();
@@ -235,9 +246,14 @@ public class MainMenu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        TableOrder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableOrderMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TableOrder);
 
-        DiscountField.setBackground(new java.awt.Color(249, 249, 249));
+        BillPanel.setBackground(new java.awt.Color(249, 249, 249));
 
         jLabel1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(35, 35, 35));
@@ -263,48 +279,48 @@ public class MainMenu extends javax.swing.JFrame {
         TotalField.setForeground(new java.awt.Color(35, 35, 35));
         TotalField.setBorder(null);
 
-        jTextField3.setBackground(new java.awt.Color(249, 249, 249));
-        jTextField3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(35, 35, 35));
-        jTextField3.setBorder(null);
+        DiscountField.setBackground(new java.awt.Color(249, 249, 249));
+        DiscountField.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DiscountField.setForeground(new java.awt.Color(35, 35, 35));
+        DiscountField.setBorder(null);
 
-        javax.swing.GroupLayout DiscountFieldLayout = new javax.swing.GroupLayout(DiscountField);
-        DiscountField.setLayout(DiscountFieldLayout);
-        DiscountFieldLayout.setHorizontalGroup(
-            DiscountFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DiscountFieldLayout.createSequentialGroup()
+        javax.swing.GroupLayout BillPanelLayout = new javax.swing.GroupLayout(BillPanel);
+        BillPanel.setLayout(BillPanelLayout);
+        BillPanelLayout.setHorizontalGroup(
+            BillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BillPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(DiscountFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
-                    .addGroup(DiscountFieldLayout.createSequentialGroup()
+                    .addGroup(BillPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SubTotalField))
-                    .addGroup(DiscountFieldLayout.createSequentialGroup()
+                    .addGroup(BillPanelLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(36, 36, 36)
-                        .addComponent(jTextField3))
-                    .addGroup(DiscountFieldLayout.createSequentialGroup()
+                        .addComponent(DiscountField))
+                    .addGroup(BillPanelLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(29, 29, 29)
                         .addComponent(TotalField)))
                 .addContainerGap())
         );
-        DiscountFieldLayout.setVerticalGroup(
-            DiscountFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DiscountFieldLayout.createSequentialGroup()
+        BillPanelLayout.setVerticalGroup(
+            BillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BillPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DiscountFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(SubTotalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(DiscountFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DiscountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(DiscountFieldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BillPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(TotalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -318,7 +334,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(TablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(DiscountField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BillPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         TablePanelLayout.setVerticalGroup(
@@ -327,7 +343,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DiscountField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BillPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -872,6 +888,11 @@ public class MainMenu extends javax.swing.JFrame {
         VoidButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         VoidButton.setForeground(new java.awt.Color(35, 35, 35));
         VoidButton.setText("Void");
+        VoidButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoidButtonActionPerformed(evt);
+            }
+        });
 
         PrintBillButton.setBackground(new java.awt.Color(249, 249, 249));
         PrintBillButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -882,6 +903,16 @@ public class MainMenu extends javax.swing.JFrame {
         FunctionButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         FunctionButton.setForeground(new java.awt.Color(35, 35, 35));
         FunctionButton.setText("Function");
+
+        DiscountBtn.setBackground(new java.awt.Color(249, 249, 249));
+        DiscountBtn.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        DiscountBtn.setForeground(new java.awt.Color(35, 35, 35));
+        DiscountBtn.setText("Discount");
+        DiscountBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiscountBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BottomFunctionPanelLayout = new javax.swing.GroupLayout(BottomFunctionPanel);
         BottomFunctionPanel.setLayout(BottomFunctionPanelLayout);
@@ -894,6 +925,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(FunctionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(VoidButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DiscountBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(SignInButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -907,7 +940,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, BottomFunctionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FunctionButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                        .addComponent(VoidButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                        .addComponent(VoidButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addComponent(DiscountBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
                     .addComponent(PrintBillButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(SignInButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(CloseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1030,6 +1064,41 @@ public class MainMenu extends javax.swing.JFrame {
         PinForm.setText("");
     }
     
+    public void clearBill(){
+        SubTotalField.setText("0.0");
+        DiscountField.setText("0.0");
+        TotalField.setText("0.0");
+    }
+    
+    public void clearTable(){
+        DefaultTableModel dtm = (DefaultTableModel) TableOrder.getModel();
+        
+        int row = dtm.getRowCount();
+        
+        for(int i = row; i>0; i--){
+            dtm.removeRow(i-1);
+        }
+    }
+    
+    public void clearTableNum(){
+        tableNum = "";
+        setTitle(user.getUsername()+"\t"+user.getRole()+"\tTable: "+tableNum);
+    }
+    
+    public double getAmount(){
+        TableModel model = TableOrder.getModel();
+        
+        int row = model.getRowCount();
+        double sub = 0;
+        double[] amount = new double[row];
+        
+        for(int i = 0; i<row; i++){
+            amount[i] = Double.parseDouble(model.getValueAt(i, 2).toString());
+            sub = sub + amount[i];
+        }
+        
+        return sub;
+    }
     
     //method di baris 1005 - 1017 buat ngetes doang
     public void printOrder(List<Transaction> listTransaction){
@@ -1116,7 +1185,10 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_Button0ActionPerformed
 
     private void DotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DotButtonActionPerformed
-        
+        textValue = String.valueOf(PinForm.getPassword());
+        if(textValue.length() < 4){
+            PinForm.setText(textValue + ".");
+        }
     }//GEN-LAST:event_DotButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
@@ -1157,7 +1229,50 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_Category1ButtonActionPerformed
 
     private void SubTotalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTotalButtonActionPerformed
-        // TODO add your handling code here:
+        double taxService, discount, subTotal, total;
+        
+        clearBill();
+        
+        subTotal = getAmount();
+        discount = Double.parseDouble(DiscountField.getText());
+        
+        if(discount != 0){
+            discount = discount * subTotal;
+            total = subTotal - discount;
+            
+            taxService = total * tax;
+            total = total + taxService;
+        }
+        else{
+            total = subTotal;
+            taxService = total * tax;
+            total = total + taxService;
+        }
+//        if(DiscountField.getText().equals("0.0")){
+//            discount = 0;
+//        }
+//        else{
+//            discount = Double.parseDouble(DiscountField.getText());
+//        }
+//        double taxService;
+//        
+//        if(discount != 0){
+//            discount = discount * subTotal;
+//            total = subTotal - discount;
+//            
+//            taxService = total * tax;
+//            total = total + taxService;
+//        }
+//        else{
+//            total = subTotal;
+//            taxService = total * tax;
+//            total = total + taxService;
+//        }
+        
+        SubTotalField.setText(String.valueOf(subTotal));
+        DiscountField.setText(String.valueOf(discount));
+        TotalField.setText(String.valueOf(total));
+        
     }//GEN-LAST:event_SubTotalButtonActionPerformed
 
     private void TableHoldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TableHoldButtonActionPerformed
@@ -1197,6 +1312,9 @@ public class MainMenu extends javax.swing.JFrame {
 
                 if(insertStatus == 1){
                     JOptionPane.showMessageDialog(null, "Order Berhasil Dilakukan");
+                    clearBill();
+                    clearTable();
+                    clearTableNum();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Order Gagal");
@@ -1225,6 +1343,7 @@ public class MainMenu extends javax.swing.JFrame {
             tableNum = textValue;
             setTitle(user.getUsername()+"\t"+user.getRole()+"\tTable: "+tableNum);
         }
+        clearTextField();
     }//GEN-LAST:event_DineInButtonActionPerformed
 
     private void TakeawayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TakeawayButtonActionPerformed
@@ -1253,14 +1372,17 @@ public class MainMenu extends javax.swing.JFrame {
                 PrintBillButton.setEnabled(true);
                 FunctionButton.setEnabled(true);
                 VoidButton.setEnabled(true);
+                DiscountBtn.setEnabled(true);
             }else if (loginStatus == 2){
                 PrintBillButton.setEnabled(true);
                 FunctionButton.setEnabled(false);
                 VoidButton.setEnabled(false);
+                DiscountBtn.setEnabled(false);
             }else if (loginStatus == 3){
                 PrintBillButton.setEnabled(true);
                 FunctionButton.setEnabled(false);
                 VoidButton.setEnabled(true);
+                DiscountBtn.setEnabled(true);
             }
             
             showPassword();
@@ -1286,6 +1408,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
             else{
                 setTable(quantity, product);
+                clearTextField();
             }
         }
         
@@ -1309,6 +1432,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
             else{
                 setTable(quantity, product);
+                clearTextField();
             }
         }
     }//GEN-LAST:event_ProductButton2ActionPerformed
@@ -1327,6 +1451,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
             else{
                 setTable(quantity, product);
+                clearTextField();
             }
         }
         
@@ -1347,6 +1472,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
             else{
                 setTable(quantity, product);
+                clearTextField();
             }
         }
     }//GEN-LAST:event_ProductButton4ActionPerformed
@@ -1445,6 +1571,55 @@ public class MainMenu extends javax.swing.JFrame {
         splash.setVisible(true);
     }//GEN-LAST:event_CloseButtonActionPerformed
 
+    public double countDiscount(){
+        double taxService, discount, total = 0;
+        
+        double sub = Double.parseDouble(SubTotalField.getText());
+        
+        if(sub != 0){
+            if(String.valueOf(PinForm.getPassword()).isEmpty()){
+                discount = 0;
+            }else{
+                discount = Double.parseDouble(String.valueOf(PinForm.getPassword()));
+            }
+            
+            discount = discount * sub;
+
+            total = sub - discount;
+            taxService = total * tax;
+
+            total = total + taxService;
+
+            DiscountField.setText(String.valueOf(discount));
+
+            TotalField.setText(String.valueOf(total));
+            clearTextField();
+        }else{
+            JOptionPane.showMessageDialog(null, "Sub Total Kosong");
+        }
+        
+        return total;
+    }
+    
+    private void DiscountBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiscountBtnActionPerformed
+        totalBill = countDiscount();        
+    }//GEN-LAST:event_DiscountBtnActionPerformed
+
+    public void deleteRow(){
+        DefaultTableModel dtm = (DefaultTableModel) TableOrder.getModel();
+        if(TableOrder.isRowSelected(orderRow)){
+            dtm.removeRow(orderRow);
+        }
+    }
+    
+    private void VoidButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoidButtonActionPerformed
+        deleteRow();
+    }//GEN-LAST:event_VoidButtonActionPerformed
+
+    private void TableOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableOrderMouseClicked
+        orderRow = TableOrder.getSelectedRow();
+    }//GEN-LAST:event_TableOrderMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1482,6 +1657,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BillPanel;
     private javax.swing.JPanel BottomFunctionPanel;
     private javax.swing.JButton Button0;
     private javax.swing.JButton Button1;
@@ -1500,8 +1676,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JButton DineInButton;
+    private javax.swing.JButton DiscountBtn;
     private javax.swing.JButton DiscountButton;
-    private javax.swing.JPanel DiscountField;
+    private javax.swing.JTextField DiscountField;
     private javax.swing.JButton DotButton;
     private javax.swing.JButton FunctionButton;
     private javax.swing.JPanel FunctionPanel;
@@ -1542,6 +1719,5 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

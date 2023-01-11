@@ -47,7 +47,7 @@ public class SplashScreen extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(249, 249, 249));
         jLabel3.setText("The complete Food & Beverage Management System ");
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/View/Logo.png"))); // NOI18N
+        Logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\POS\\src\\main\\java\\org\\View\\Logo.png")); // NOI18N
 
         StartButton.setText("Start");
         StartButton.addActionListener(new java.awt.event.ActionListener() {
