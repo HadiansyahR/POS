@@ -62,13 +62,14 @@ public class ViewTransaction extends javax.swing.JFrame {
        }
     }
     
-    public void setTableById(int id){
+    public void setTableById(String id){
         DefaultTableModel dtm = (DefaultTableModel) TransactionTable.getModel();
+        clearTable();
         
         transGroup = new TransactionGroup();
-        transGroup = contTrans.findTransaction(id);
+        transGroup = contTrans.findTransaction(Integer.parseInt(id));
         
-        clearTable();
+        
         
         if(transGroup.getTransaction_id() != 0){
             String[] data = new String[6];
@@ -77,6 +78,8 @@ public class ViewTransaction extends javax.swing.JFrame {
             data[2] = Double.toString(transGroup.getTotal());
             data[3] = transGroup.getTransaction_date();
             data[4] = Integer.toString(transGroup.getPayment_status());
+            
+            dtm.addRow(data);
         }else{
             JOptionPane.showMessageDialog(null, "Data Tidak Ada");
         }
@@ -427,17 +430,17 @@ public class ViewTransaction extends javax.swing.JFrame {
     }//GEN-LAST:event_SalesDropDownActionPerformed
 
     private void SearchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchFieldKeyPressed
-     int id = Integer.parseInt(SearchField.getText());
-        transGroup = new TransactionGroup();
+        String idString = SearchField.getText();
+
         if (SearchField.getText().isEmpty() == false) {
             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-                setTableById(id);
+                setTableById(idString);
             }
         }
     }//GEN-LAST:event_SearchFieldKeyPressed
 
     private void SearchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchFieldMouseClicked
-            SearchField.setText("");
+        
     }//GEN-LAST:event_SearchFieldMouseClicked
 
     /**
