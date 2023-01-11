@@ -4,18 +4,58 @@
  */
 package org.View;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import org.Controller.ControllerTransaction;
+import org.Model.Transaction;
+import org.Model.TransactionGroup;
+
 /**
  *
  * @author Dreamvalian
  */
 public class ViewTransaction extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ViewTransaction
-     */
+    private ControllerTransaction contTrans;
+    
+    private DefaultTableModel model;
+    
     public ViewTransaction() {
         initComponents();
+        
+        model = new DefaultTableModel();
+        
+        TransactionTable.setModel(model);
+        model.addColumn("Transaction Id");
+        model.addColumn("Table Num");
+        model.addColumn("Total");
+        model.addColumn("Transaction Date");
+        model.addColumn("Payment Status");
+        
+        getData();
+        
         setLocationRelativeTo(null);
+    }
+    
+    public final void getData(){
+       DefaultTableModel dtm = (DefaultTableModel) TransactionTable.getModel();
+       contTrans = new ControllerTransaction();
+       
+       dtm.setRowCount(0);
+       
+       List<TransactionGroup> listTransactionGroup = contTrans.showListTransaction();
+       
+       String[] data = new String[6];
+       for(TransactionGroup transGroup: listTransactionGroup){
+           data[0] = Integer.toString(transGroup.getTransaction_id());
+           data[1] = transGroup.getTable_num();
+           data[2] = Double.toString(transGroup.getTotal());
+           data[3] = transGroup.getTransaction_date();
+           data[4] = Integer.toString(transGroup.getPayment_status());
+           
+           dtm.addRow(data);
+       }
     }
 
     /**
