@@ -108,7 +108,6 @@ public class ViewTransaction extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        SearchField = new javax.swing.JLabel();
         RefreshButton = new javax.swing.JButton();
         AllRadioButton = new javax.swing.JRadioButton();
         OperatorRadioButton = new javax.swing.JRadioButton();
@@ -116,6 +115,7 @@ public class ViewTransaction extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
+        SearchField = new javax.swing.JTextField();
         OpenButton = new javax.swing.JButton();
         NewTableButton = new javax.swing.JButton();
         PrintButton = new javax.swing.JButton();
@@ -169,21 +169,6 @@ public class ViewTransaction extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(249, 249, 249));
         jSeparator1.setForeground(new java.awt.Color(35, 35, 35));
 
-        SearchField.setBackground(new java.awt.Color(249, 249, 249));
-        SearchField.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        SearchField.setForeground(new java.awt.Color(35, 35, 35));
-        SearchField.setText("Find");
-        SearchField.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SearchFieldMouseClicked(evt);
-            }
-        });
-        SearchField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                SearchFieldKeyPressed(evt);
-            }
-        });
-
         RefreshButton.setBackground(new java.awt.Color(249, 249, 249));
         RefreshButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         RefreshButton.setForeground(new java.awt.Color(35, 35, 35));
@@ -229,6 +214,21 @@ public class ViewTransaction extends javax.swing.JFrame {
         jCheckBox2.setForeground(new java.awt.Color(35, 35, 35));
         jCheckBox2.setText("POS ID");
 
+        SearchField.setBackground(new java.awt.Color(249, 249, 249));
+        SearchField.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SearchField.setForeground(new java.awt.Color(35, 35, 35));
+        SearchField.setText("Find");
+        SearchField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchFieldMouseClicked(evt);
+            }
+        });
+        SearchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SearchFieldKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -237,7 +237,6 @@ public class ViewTransaction extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SalesDropDown, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SearchField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(RefreshButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -249,14 +248,15 @@ public class ViewTransaction extends javax.swing.JFrame {
                             .addComponent(OperatorRadioButton)
                             .addComponent(jCheckBox1)
                             .addComponent(jCheckBox2))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(SearchField, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SearchField)
+                .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
@@ -427,7 +427,7 @@ public class ViewTransaction extends javax.swing.JFrame {
     }//GEN-LAST:event_SalesDropDownActionPerformed
 
     private void SearchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchFieldKeyPressed
-        int id = Integer.parseInt(SearchField.getText());
+     int id = Integer.parseInt(SearchField.getText());
         transGroup = new TransactionGroup();
         if (SearchField.getText().isEmpty() == false) {
             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
@@ -437,7 +437,7 @@ public class ViewTransaction extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchFieldKeyPressed
 
     private void SearchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchFieldMouseClicked
-        SearchField.setText("");
+            SearchField.setText("");
     }//GEN-LAST:event_SearchFieldMouseClicked
 
     /**
@@ -484,7 +484,7 @@ public class ViewTransaction extends javax.swing.JFrame {
     private javax.swing.JButton PrintButton;
     private javax.swing.JButton RefreshButton;
     private javax.swing.JComboBox<String> SalesDropDown;
-    private javax.swing.JLabel SearchField;
+    private javax.swing.JTextField SearchField;
     private javax.swing.JButton TenderButton;
     private javax.swing.JTable TransactionTable;
     private javax.swing.JButton ViewButton;
