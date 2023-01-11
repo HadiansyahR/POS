@@ -4,8 +4,10 @@
  */
 package org.View;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.Controller.ControllerTransaction;
 import org.Model.Transaction;
@@ -18,6 +20,8 @@ import org.Model.TransactionGroup;
 public class ViewTransaction extends javax.swing.JFrame {
 
     private ControllerTransaction contTrans;
+    private TransactionGroup transGroup;
+    private Transaction trans;
     
     private DefaultTableModel model;
     
@@ -57,7 +61,38 @@ public class ViewTransaction extends javax.swing.JFrame {
            dtm.addRow(data);
        }
     }
-
+    
+    public void setTableById(int id){
+        DefaultTableModel dtm = (DefaultTableModel) TransactionTable.getModel();
+        
+        transGroup = new TransactionGroup();
+        transGroup = contTrans.findTransaction(id);
+        
+        clearTable();
+        
+        if(transGroup.getTransaction_id() != 0){
+            String[] data = new String[6];
+            data[0] = Integer.toString(transGroup.getTransaction_id());
+            data[1] = transGroup.getTable_num();
+            data[2] = Double.toString(transGroup.getTotal());
+            data[3] = transGroup.getTransaction_date();
+            data[4] = Integer.toString(transGroup.getPayment_status());
+        }else{
+            JOptionPane.showMessageDialog(null, "Data Tidak Ada");
+        }
+        
+    }
+    
+    public void clearTable(){
+        DefaultTableModel dtm = (DefaultTableModel) TransactionTable.getModel();
+        
+        int row = dtm.getRowCount();
+        
+        for(int i = row; i>0; i--){
+            dtm.removeRow(i-1);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,7 +108,7 @@ public class ViewTransaction extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
+        SearchField = new javax.swing.JLabel();
         RefreshButton = new javax.swing.JButton();
         AllRadioButton = new javax.swing.JRadioButton();
         OperatorRadioButton = new javax.swing.JRadioButton();
@@ -134,10 +169,20 @@ public class ViewTransaction extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(249, 249, 249));
         jSeparator1.setForeground(new java.awt.Color(35, 35, 35));
 
-        jLabel1.setBackground(new java.awt.Color(249, 249, 249));
-        jLabel1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(35, 35, 35));
-        jLabel1.setText("Find");
+        SearchField.setBackground(new java.awt.Color(249, 249, 249));
+        SearchField.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        SearchField.setForeground(new java.awt.Color(35, 35, 35));
+        SearchField.setText("Find");
+        SearchField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SearchFieldMouseClicked(evt);
+            }
+        });
+        SearchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SearchFieldKeyPressed(evt);
+            }
+        });
 
         RefreshButton.setBackground(new java.awt.Color(249, 249, 249));
         RefreshButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -192,7 +237,7 @@ public class ViewTransaction extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SalesDropDown, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SearchField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(RefreshButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -211,7 +256,7 @@ public class ViewTransaction extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(SearchField)
                 .addGap(5, 5, 5)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
@@ -381,6 +426,20 @@ public class ViewTransaction extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SalesDropDownActionPerformed
 
+    private void SearchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchFieldKeyPressed
+        int id = Integer.parseInt(SearchField.getText());
+        transGroup = new TransactionGroup();
+        if (SearchField.getText().isEmpty() == false) {
+            if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+                setTableById(id);
+            }
+        }
+    }//GEN-LAST:event_SearchFieldKeyPressed
+
+    private void SearchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchFieldMouseClicked
+        SearchField.setText("");
+    }//GEN-LAST:event_SearchFieldMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -425,12 +484,12 @@ public class ViewTransaction extends javax.swing.JFrame {
     private javax.swing.JButton PrintButton;
     private javax.swing.JButton RefreshButton;
     private javax.swing.JComboBox<String> SalesDropDown;
+    private javax.swing.JLabel SearchField;
     private javax.swing.JButton TenderButton;
     private javax.swing.JTable TransactionTable;
     private javax.swing.JButton ViewButton;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
