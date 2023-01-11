@@ -440,7 +440,7 @@ public class ViewTransaction extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchFieldKeyPressed
 
     private void SearchFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchFieldMouseClicked
-        
+        SearchField.setText("");
     }//GEN-LAST:event_SearchFieldMouseClicked
 
     /**
