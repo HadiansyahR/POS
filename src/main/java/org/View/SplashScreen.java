@@ -17,6 +17,7 @@ public class SplashScreen extends javax.swing.JFrame {
      */
     public SplashScreen() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -47,8 +48,11 @@ public class SplashScreen extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(249, 249, 249));
         jLabel3.setText("The complete Food & Beverage Management System ");
 
-        Logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Documents\\NetBeansProjects\\POS\\src\\main\\java\\org\\View\\Logo.png")); // NOI18N
+        Logo.setIcon(new javax.swing.ImageIcon("D:\\Sekolah Agama\\Season 3\\ISB-205 Object Oriented Programming\\Project\\POS\\src\\main\\java\\org\\View\\Logo.png")); // NOI18N
 
+        StartButton.setBackground(new java.awt.Color(249, 249, 249));
+        StartButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        StartButton.setForeground(new java.awt.Color(35, 35, 35));
         StartButton.setText("Start");
         StartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,6 +60,9 @@ public class SplashScreen extends javax.swing.JFrame {
             }
         });
 
+        CloseButton.setBackground(new java.awt.Color(249, 249, 249));
+        CloseButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        CloseButton.setForeground(new java.awt.Color(35, 35, 35));
         CloseButton.setText("Close");
         CloseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,36 +77,32 @@ public class SplashScreen extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(175, 175, 175)
-                                .addComponent(StartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(162, 162, 162)
-                                .addComponent(CloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(176, 176, 176)
-                                .addComponent(Header))))
+                        .addGap(180, 180, 180)
+                        .addComponent(StartButton)
+                        .addGap(174, 174, 174)
+                        .addComponent(CloseButton))
+                    .addComponent(Logo)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(Logo)))
-                .addContainerGap(160, Short.MAX_VALUE))
+                        .addGap(176, 176, 176)
+                        .addComponent(Header))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel3)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(199, Short.MAX_VALUE)
-                .addComponent(Logo)
-                .addGap(18, 18, 18)
+                .addComponent(Logo, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
                 .addComponent(Header)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(StartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86))
+                    .addComponent(StartButton)
+                    .addComponent(CloseButton))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,8 +110,8 @@ public class SplashScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,16 +123,16 @@ public class SplashScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Program Dihentikan");
-        dispose();
-    }//GEN-LAST:event_CloseButtonActionPerformed
-
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
         MainMenu main = new MainMenu();
         dispose();
         main.setVisible(true);
     }//GEN-LAST:event_StartButtonActionPerformed
+
+    private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButtonActionPerformed
+        JOptionPane.showMessageDialog(null, "Program Dihentikan");
+        dispose();
+    }//GEN-LAST:event_CloseButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,7 +145,7 @@ public class SplashScreen extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows Vista".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
