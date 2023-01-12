@@ -10,7 +10,9 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import org.ConnectionManager.ConnectionManager;
+import org.Controller.ControllerProduct;
 import org.Controller.ControllerTransaction;
+import org.Controller.ControllerUser;
 import org.Model.Product;
 
 /**
@@ -49,7 +51,17 @@ public class NewMain {
 //        System.out.println(date.format(dtf));
         ControllerTransaction ct = new ControllerTransaction();
         
-        ct.showListTransaction();
+//        ct.showListTransaction();
+        
+        ControllerUser cu = new ControllerUser();
+        ControllerProduct cp = new ControllerProduct();
+//        System.out.println(cu.insertUser(1515, "testing", "Waiter"));
+//        System.out.println(cu.updateUser(1515, "Nisga", "Waiter"));
+//        System.out.println(cu.deleteUser(1515));
+
+//        System.out.println(cp.insertProduct("Test", "Food", "Appetizer", 100, 2));
+//        System.out.println(cp.updateProduct("P017", "Pecel Lele", "Food", "Main Course", 0, 10));
+        System.out.println(cp.deleteProduct("P017"));
     }
     
 }
