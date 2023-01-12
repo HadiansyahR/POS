@@ -217,7 +217,7 @@
                                               <Component id="PinTextfield" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="PriceTextfield" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="QuantityTextfield" min="-2" max="-2" attributes="0"/>

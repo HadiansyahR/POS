@@ -1570,15 +1570,15 @@ public class MainMenu extends javax.swing.JFrame {
         SubCategory1Button5.setEnabled(false);
         
         SubCategory2_1Button.setEnabled(true);
-        SubCategory2_1Button1.setEnabled(true);
-        SubCategory2_1Button2.setEnabled(true);
-        SubCategory2_1Button3.setEnabled(true);
-        SubCategory2_1Button4.setEnabled(true);
+//        SubCategory2_1Button1.setEnabled(true);
+//        SubCategory2_1Button2.setEnabled(true);
+//        SubCategory2_1Button3.setEnabled(true);
+//        SubCategory2_1Button4.setEnabled(true);
         
         SubCategory2_2Button.setEnabled(true);
-        SubCategory2_2Button1.setEnabled(true);
-        SubCategory2_2Button2.setEnabled(true);
-        SubCategory2_2Button3.setEnabled(true);
+//        SubCategory2_2Button1.setEnabled(true);
+//        SubCategory2_2Button2.setEnabled(true);
+//        SubCategory2_2Button3.setEnabled(true);
         
         ProductButton1.setEnabled(true);
         ProductButton1.setText("");
@@ -1611,11 +1611,25 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_SubCategory1Button5ActionPerformed
 
     private void SubCategory2_1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_1ButtonActionPerformed
-        setFrame(SubCategory2_1Button.getText());
+        SubCategory2_2Button1.setEnabled(false);
+        SubCategory2_2Button2.setEnabled(false);
+        SubCategory2_2Button3.setEnabled(false);
+        
+        SubCategory2_1Button1.setEnabled(true);
+        SubCategory2_1Button2.setEnabled(true);
+        SubCategory2_1Button3.setEnabled(true);
+        SubCategory2_1Button4.setEnabled(true);
     }//GEN-LAST:event_SubCategory2_1ButtonActionPerformed
 
     private void SubCategory2_2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2ButtonActionPerformed
-        setFrame(SubCategory2_2Button.getText());
+        SubCategory2_2Button1.setEnabled(true);
+        SubCategory2_2Button2.setEnabled(true);
+        SubCategory2_2Button3.setEnabled(true);
+        
+        SubCategory2_1Button1.setEnabled(false);
+        SubCategory2_1Button2.setEnabled(false);
+        SubCategory2_1Button3.setEnabled(false);
+        SubCategory2_1Button4.setEnabled(false);
     }//GEN-LAST:event_SubCategory2_2ButtonActionPerformed
 
     private void SubCategory2_2Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategory2_2Button1ActionPerformed
