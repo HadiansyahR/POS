@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import org.Controller.ControllerTransaction;
 import org.Model.Transaction;
 import org.Model.TransactionGroup;
+import org.Model.User;
 
 /**
  *
@@ -22,6 +23,9 @@ public class ViewTransaction extends javax.swing.JFrame {
     private ControllerTransaction contTrans;
     private TransactionGroup transGroup;
     private Transaction trans;
+    private User userView;
+    
+    private int loginStatusView;
     
     private DefaultTableModel model;
     
@@ -29,7 +33,28 @@ public class ViewTransaction extends javax.swing.JFrame {
         initComponents();
         
         model = new DefaultTableModel();
+        SalesDropDown.setSelectedItem(null);
+        TransactionTable.setModel(model);
+        model.addColumn("Transaction Id");
+        model.addColumn("Table Num");
+        model.addColumn("Total");
+        model.addColumn("Transaction Date");
+        model.addColumn("Payment Status");
         
+        getData();
+        
+        setLocationRelativeTo(null);
+    }
+    
+    public ViewTransaction(User user, int loginStatus) {
+        initComponents();
+        
+        loginStatusView = loginStatus;
+        userView = user;
+        SalesDropDown.setSelectedItem(null);
+        model = new DefaultTableModel();
+//        System.out.println(user.getRole());
+//        System.out.println(loginStatus);
         TransactionTable.setModel(model);
         model.addColumn("Transaction Id");
         model.addColumn("Table Num");
@@ -49,6 +74,35 @@ public class ViewTransaction extends javax.swing.JFrame {
        dtm.setRowCount(0);
        
        List<TransactionGroup> listTransactionGroup = contTrans.showListTransaction();
+       
+       String[] data = new String[6];
+       for(TransactionGroup transGroup: listTransactionGroup){
+           data[0] = Integer.toString(transGroup.getTransaction_id());
+           data[1] = transGroup.getTable_num();
+           data[2] = Double.toString(transGroup.getTotal());
+           data[3] = transGroup.getTransaction_date();
+           data[4] = Integer.toString(transGroup.getPayment_status());
+           
+           dtm.addRow(data);
+       }
+    }
+    
+    public final void getData(String payment_status){
+       DefaultTableModel dtm = (DefaultTableModel) TransactionTable.getModel();
+       contTrans = new ControllerTransaction();
+       
+       clearTable();
+       
+       dtm.setRowCount(0);
+       int status;
+       
+       if(payment_status.equals("Open Tables")){
+           status = 0;
+       }
+       else{
+           status = 1;
+       }
+       List<TransactionGroup> listTransactionGroup = contTrans.filterByPayment(status);
        
        String[] data = new String[6];
        for(TransactionGroup transGroup: listTransactionGroup){
@@ -195,7 +249,7 @@ public class ViewTransaction extends javax.swing.JFrame {
         SalesDropDown.setBackground(new java.awt.Color(249, 249, 249));
         SalesDropDown.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         SalesDropDown.setForeground(new java.awt.Color(35, 35, 35));
-        SalesDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Open Tables", "Closed Table", "Take Away" }));
+        SalesDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Open Tables", "Closed Table" }));
         SalesDropDown.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalesDropDownActionPerformed(evt);
@@ -398,7 +452,13 @@ public class ViewTransaction extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
-        // TODO add your handling code here:
+        String choice = (String) SalesDropDown.getSelectedItem();
+        if (choice.equals("All")){
+            getData();
+        }else{
+            getData(choice);
+        }
+        
     }//GEN-LAST:event_RefreshButtonActionPerformed
 
     private void OpenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenButtonActionPerformed
@@ -422,7 +482,9 @@ public class ViewTransaction extends javax.swing.JFrame {
     }//GEN-LAST:event_TenderButtonActionPerformed
 
     private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButtonActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        MainMenu mm = new MainMenu(userView, loginStatusView);
+        mm.setVisible(true);
     }//GEN-LAST:event_CloseButtonActionPerformed
 
     private void SalesDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesDropDownActionPerformed
@@ -435,6 +497,7 @@ public class ViewTransaction extends javax.swing.JFrame {
         if (SearchField.getText().isEmpty() == false) {
             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
                 setTableById(idString);
+                SearchField.setText("Find by Id");
             }
         }
     }//GEN-LAST:event_SearchFieldKeyPressed

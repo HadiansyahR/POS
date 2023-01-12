@@ -106,6 +106,83 @@ public class MainMenu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
+    public MainMenu(User user, int loginStatus) {
+//        PinForm.setEditable(false);
+//        setTitle("Please Login to Proceed");
+        
+        initComponents();
+        tableNum = "";
+        
+        model = new DefaultTableModel();
+        TableOrder.setModel(model);
+        model.addColumn("Qty");
+        model.addColumn("Description");
+        model.addColumn("Amount");
+                
+        if (loginStatus > 0){
+            user = contUser.getUser();
+            setTitle(user.getUsername()+"\t"+user.getRole()+"\tTable: "+tableNum);
+            clearTextField();
+//            JOptionPane.showMessageDialog(null, "Login Berhasil");
+            Category1Button.setEnabled(true);
+            Category2Button.setEnabled(true);
+            SubTotalButton.setEnabled(true);
+            ViewTransButton.setEnabled(true);
+            TableHoldButton.setEnabled(true);
+            DineInButton.setEnabled(true);
+            TakeawayButton.setEnabled(true);
+            
+            if (loginStatus == 1){
+                PrintBillButton.setEnabled(true);
+                FunctionButton.setEnabled(true);
+                VoidButton.setEnabled(true);
+                DiscountBtn.setEnabled(true);
+            }else if (loginStatus == 2){
+                PrintBillButton.setEnabled(true);
+                FunctionButton.setEnabled(false);
+                VoidButton.setEnabled(false);
+                DiscountBtn.setEnabled(false);
+            }else if (loginStatus == 3){
+                PrintBillButton.setEnabled(true);
+                FunctionButton.setEnabled(false);
+                VoidButton.setEnabled(true);
+                DiscountBtn.setEnabled(true);
+            }
+            
+            showPassword();
+        }
+        
+//        Category1Button.setEnabled(false);
+        SubCategory1Button1.setEnabled(false);
+        SubCategory1Button2.setEnabled(false);
+        SubCategory1Button3.setEnabled(false);
+        SubCategory1Button4.setEnabled(false);
+        SubCategory1Button5.setEnabled(false);
+        
+//        Category2Button.setEnabled(false);
+        SubCategory2_1Button.setEnabled(false);
+        SubCategory2_1Button1.setEnabled(false);
+        SubCategory2_1Button2.setEnabled(false);
+        SubCategory2_1Button3.setEnabled(false);
+        SubCategory2_1Button4.setEnabled(false);
+        
+        SubCategory2_2Button.setEnabled(false);
+        SubCategory2_2Button1.setEnabled(false);
+        SubCategory2_2Button2.setEnabled(false);
+        SubCategory2_2Button3.setEnabled(false);
+        
+        ProductButton1.setEnabled(false);
+        ProductButton2.setEnabled(false);
+        ProductButton3.setEnabled(false);
+        ProductButton4.setEnabled(false);
+        
+        SubTotalField.setText("0.0");
+        DiscountField.setText("0.0");
+        TotalField.setText("0.0");
+        
+        this.setLocationRelativeTo(null);
+    }
+    
     public void setTable(String quantity, Product product){
         DefaultTableModel dtm = (DefaultTableModel) TableOrder.getModel();
         
@@ -1332,7 +1409,9 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_TableHoldButtonActionPerformed
 
     private void ViewTransButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTransButtonActionPerformed
-        
+        dispose();
+        ViewTransaction vt = new ViewTransaction(user, loginStatus);
+        vt.setVisible(true);
     }//GEN-LAST:event_ViewTransButtonActionPerformed
 
     private void DineInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DineInButtonActionPerformed
@@ -1351,6 +1430,7 @@ public class MainMenu extends javax.swing.JFrame {
         setTitle(user.getUsername()+"\t"+user.getRole()+"\tTable: "+tableNum);
     }//GEN-LAST:event_TakeawayButtonActionPerformed
 
+    
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
         contUser = new ControllerUser();
         loginStatus = contUser.login(String.valueOf(PinForm.getPassword()));

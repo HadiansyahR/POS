@@ -83,7 +83,7 @@ public class ControllerTransaction {
         ConnectionManager conMan = new ConnectionManager();
         Connection con = conMan.LogOn();
         
-        List<TransactionGroup> listTransactionGroup = new ArrayList<TransactionGroup>();
+        List<TransactionGroup> listTransactionGroup = new ArrayList<>();
         
         int rowTransaction = countTransactionRow();
         double[] totalPrice = new double[rowTransaction];
@@ -159,6 +159,59 @@ public class ControllerTransaction {
         }
         
         return transGroup;
+    }
+    
+    public List<TransactionGroup> filterByPayment(int payment_status){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        List<TransactionGroup> listTransactionGroup = new ArrayList<>();
+        
+        int rowTransaction = countTransactionRow();
+        double[] totalPrice = new double[rowTransaction];
+        
+        for(int i=0; i<rowTransaction; i++){
+            query = "SELECT SUM(subtotal) from transaction WHERE transaction_id = "+(i+1);
+            try{
+                Statement stm = con.createStatement();
+                ResultSet rs;
+                rs = stm.executeQuery(query);
+                while(rs.next()){
+                    totalPrice[i] = rs.getDouble(1);
+//                    System.out.println(totalPrice[i]);
+                }
+            }catch(Exception ex){
+                System.out.println(ex.toString());
+                conMan.LogOff();
+            }
+        }
+        
+        query = "SELECT * FROM transaction WHERE payment_status = "+ payment_status +" GROUP BY transaction_id";
+        
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs;
+            rs = stm.executeQuery(query);
+            int j = 0;
+            while(rs.next()){
+                TransactionGroup transGroup = new TransactionGroup();
+                transGroup.setTransaction_id(rs.getInt("transaction_id"));
+                transGroup.setTable_num(rs.getString("table_num"));
+                transGroup.setTotal(totalPrice[j]);
+                transGroup.setTransaction_date(rs.getString("transaction_date"));
+                transGroup.setPayment_status(rs.getInt("payment_status"));
+                
+                listTransactionGroup.add(transGroup);
+                j++;
+            }
+        }catch(Exception ex){
+            System.out.println(ex.toString());
+            conMan.LogOff();
+        }
+        
+        conMan.LogOff();
+        
+        return listTransactionGroup;
     }
 
 }
