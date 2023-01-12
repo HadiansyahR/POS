@@ -4,7 +4,13 @@
  */
 package org.View;
 
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import org.Controller.ControllerProduct;
+import org.Controller.ControllerUser;
+import org.Model.Product;
 import org.Model.User;
 
 /**
@@ -12,7 +18,10 @@ import org.Model.User;
  * @author Dreamvalian
  */
 public class FunctionView extends javax.swing.JFrame {
-
+    
+    private ControllerUser contUser;
+    private ControllerProduct contProd;
+    
     private User userFunction;
     private int loginStatusFunction;
     
@@ -347,7 +356,7 @@ public class FunctionView extends javax.swing.JFrame {
                                         .addComponent(UsernameTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(PinTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(PriceTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(QuantityTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -437,29 +446,133 @@ public class FunctionView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public final void getData(String buttonChoice){
+       DefaultTableModel dtm = (DefaultTableModel) ManageTable.getModel();
+       
+       dtm.setRowCount(0);
+       
+       if(buttonChoice.equals("Manage Product")){
+           contProd = new ControllerProduct();
+           List<Product> listProduct = contProd.getProducts();
+       
+           String[] data = new String[7];
+           for(Product product: listProduct){
+
+               data[0] = product.getProduct_id();
+               data[1] = product.getProduct_name();
+               data[2] = product.getCategory();
+               data[3] = product.getSub_category();
+               data[4] = Double.toString(product.getPrice());
+               data[5] = Integer.toString(product.getQuantity());   
+
+               dtm.addRow(data);
+           }
+       }else if(buttonChoice.equals("Manage User")){
+           contUser = new ControllerUser();
+           List<User> listUser = contUser.getUsers();
+       
+           String[] data = new String[4];
+           for(User user: listUser){
+               data[0] = Integer.toString(user.getPin());
+               data[1] = user.getUsername();
+               data[2] = user.getRole();
+               
+               dtm.addRow(data);
+           }
+       }       
+       
+    }
+    
+    public String getId(int i){
+        TableModel model = ManageTable.getModel();
+        
+        String id = model.getValueAt(i, 0).toString();
+        
+        return id;
+    }
+    
+    public void clearData(){
+        UsernameTextfield.setText("");
+        PinTextfield.setText("");
+        RolesDropdown.setSelectedItem(null);
+        
+        NameTextfield.setText("");
+        CategoryDropdown.setSelectedItem(null);
+        SubCategoryDropdown.setSelectedItem(null);
+        PriceTextfield.setText("");
+        QuantityTextfield.setText("");
+    }
+    
     private void BacktomainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BacktomainButtonActionPerformed
         dispose();
         MainMenu mm = new MainMenu(userFunction, loginStatusFunction);
         mm.setVisible(true);
     }//GEN-LAST:event_BacktomainButtonActionPerformed
-
+    
     private void ManageProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageProductButtonActionPerformed
         model = new DefaultTableModel();
         
         ManageTable.setModel(model);
-        model.addColumn("Transaction Id");
-        model.addColumn("Table Num");
-        model.addColumn("Total");
-        model.addColumn("Transaction Date");
-        model.addColumn("Payment Status");
+        model.addColumn("Product Id");
+        model.addColumn("Product Name");
+        model.addColumn("Category");
+        model.addColumn("Sub category");
+        model.addColumn("Price");
+        model.addColumn("Quantity");
+        
+        getData(ManageProductButton.getText());
     }//GEN-LAST:event_ManageProductButtonActionPerformed
-
+    
     private void UpdateProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProductButtonActionPerformed
-        // TODO add your handling code here:
+        
+        int i = ManageTable.getSelectedRow();
+        
+        if(i == -1){
+            JOptionPane.showMessageDialog(DeleteProductButton, "Harap pilih salah satu data!",
+                    "Warning!", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        contProd = new ControllerProduct();
+        String id = getId(i);
+        
+        boolean hasil = contProd.updateProduct(id, NameTextfield.getText(), 
+                (String) CategoryDropdown.getSelectedItem(), 
+                (String) SubCategoryDropdown.getSelectedItem(), 
+                Double.parseDouble(PriceTextfield.getText()), 
+                Integer.parseInt(QuantityTextfield.getText()));
+        
+        if(hasil){
+            JOptionPane.showMessageDialog(null, "Data Produk Berhasil Diupdate");
+            getData("Manage Product");
+            clearData();
+        } else {
+            JOptionPane.showMessageDialog(null, "Data Produk Gagal Diupdate", " Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_UpdateProductButtonActionPerformed
 
     private void DeleteProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProductButtonActionPerformed
-        // TODO add your handling code here:
+        
+        int i = ManageTable.getSelectedRow();
+        
+        if(i == -1){
+            JOptionPane.showMessageDialog(DeleteProductButton, "Harap pilih salah satu data!",
+                    "Warning!", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        contProd = new ControllerProduct();
+        String id = getId(i);
+        
+        boolean hasil = contProd.deleteProduct(id);
+        
+        if(hasil){
+            JOptionPane.showMessageDialog(null, "Data Produk Berhasil Dihapus");
+            getData("Manage Product");
+            clearData();
+        } else {
+            JOptionPane.showMessageDialog(null, "Data Produk Gagal Dihapus", " Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_DeleteProductButtonActionPerformed
 
     private void ClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearButtonActionPerformed
@@ -475,23 +588,93 @@ public class FunctionView extends javax.swing.JFrame {
     }//GEN-LAST:event_CategoryDropdownActionPerformed
 
     private void CreateProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateProductButtonActionPerformed
-        // TODO add your handling code here:
+        contProd = new ControllerProduct();
+        boolean hasil = contProd.insertProduct(NameTextfield.getText(), 
+                        (String) CategoryDropdown.getSelectedItem(), 
+                        (String) SubCategoryDropdown.getSelectedItem(), 
+                        Double.parseDouble(PriceTextfield.getText()), 
+                        Integer.parseInt(QuantityTextfield.getText()));
+       
+        if(hasil){
+            JOptionPane.showMessageDialog(null, "Data Produk Berhasil Ditambahkan");
+            getData("Manage Product");
+            clearData();
+        } else {
+            JOptionPane.showMessageDialog(null, "Data Produk Gagal Ditambahkan", " Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_CreateProductButtonActionPerformed
 
     private void ManageUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageUserButtonActionPerformed
-        // TODO add your handling code here:
+        model = new DefaultTableModel();
+        
+        ManageTable.setModel(model);
+        model.addColumn("PIN");
+        model.addColumn("Username");
+        model.addColumn("Role");
+        
+        getData(ManageUserButton.getText());
     }//GEN-LAST:event_ManageUserButtonActionPerformed
 
     private void CreateUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateUserButtonActionPerformed
-        // TODO add your handling code here:
+        contUser = new ControllerUser();
+        boolean hasil = contUser.insertUser(Integer.parseInt(PinTextfield.getText()), 
+                UsernameTextfield.getText(), (String) RolesDropdown.getSelectedItem());
+       
+        if(hasil){
+            JOptionPane.showMessageDialog(null, "Data User Berhasil Ditambahkan");
+            getData("Manage Product");
+            clearData();
+        } else {
+            JOptionPane.showMessageDialog(null, "Data User Gagal Ditambahkan", " Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_CreateUserButtonActionPerformed
 
     private void UpdateUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateUserButtonActionPerformed
-        // TODO add your handling code here:
+        int i = ManageTable.getSelectedRow();
+        
+        if(i == -1){
+            JOptionPane.showMessageDialog(DeleteProductButton, "Harap pilih salah satu data!",
+                    "Warning!", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        contUser = new ControllerUser();
+        
+        int pin = Integer.parseInt(getId(i));
+        
+        boolean hasil = contUser.updateUser(pin, UsernameTextfield.getText(), (String) RolesDropdown.getSelectedItem());
+        
+        if(hasil){
+            JOptionPane.showMessageDialog(null, "Data User Berhasil Diupdate");
+            getData("Manage Product");
+            clearData();
+        } else {
+            JOptionPane.showMessageDialog(null, "Data User Gagal Diupdate", " Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_UpdateUserButtonActionPerformed
 
     private void DeleteUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteUserButtonActionPerformed
-        // TODO add your handling code here:
+        int i = ManageTable.getSelectedRow();
+        
+        if(i == -1){
+            JOptionPane.showMessageDialog(DeleteProductButton, "Harap pilih salah satu data!",
+                    "Warning!", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        contUser = new ControllerUser();
+        
+        int pin = Integer.parseInt(getId(i));
+        
+        boolean hasil = contUser.deleteUser(pin);
+        
+        if(hasil){
+            JOptionPane.showMessageDialog(null, "Data User Berhasil Dihapus");
+            getData("Manage Product");
+            clearData();
+        } else {
+            JOptionPane.showMessageDialog(null, "Data User Gagal Dihapus", " Pesan", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_DeleteUserButtonActionPerformed
 
     private void RolesDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RolesDropdownActionPerformed

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import org.ConnectionManager.ConnectionManager;
 import org.Model.User;
 
@@ -50,6 +52,32 @@ public class ControllerUser {
         return loginStatus;
     }
 
+    public List<User> getUsers(){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        List<User> listUser = new ArrayList<>();
+        
+        query = "SELECT * FROM user";
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+            while(rs.next()){
+                User user = new User();
+                user.setPin(rs.getInt("pin"));
+                user.setUsername(rs.getString("username"));
+                user.setRole(rs.getString("role"));
+                
+                listUser.add(user);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.toString());
+            conMan.LogOff();
+        }
+        conMan.LogOff();
+        return listUser;
+    }
+    
     public boolean insertUser(int pin, String username, String role){
         ConnectionManager conMan = new ConnectionManager();
         Connection con = conMan.LogOn();
