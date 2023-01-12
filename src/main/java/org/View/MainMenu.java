@@ -980,6 +980,11 @@ public class MainMenu extends javax.swing.JFrame {
         FunctionButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         FunctionButton.setForeground(new java.awt.Color(35, 35, 35));
         FunctionButton.setText("Function");
+        FunctionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FunctionButtonActionPerformed(evt);
+            }
+        });
 
         DiscountBtn.setBackground(new java.awt.Color(249, 249, 249));
         DiscountBtn.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -1699,6 +1704,12 @@ public class MainMenu extends javax.swing.JFrame {
     private void TableOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableOrderMouseClicked
         orderRow = TableOrder.getSelectedRow();
     }//GEN-LAST:event_TableOrderMouseClicked
+
+    private void FunctionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FunctionButtonActionPerformed
+        dispose();
+        FunctionView fv = new FunctionView(user, loginStatus);
+        fv.setVisible(true);
+    }//GEN-LAST:event_FunctionButtonActionPerformed
 
     /**
      * @param args the command line arguments

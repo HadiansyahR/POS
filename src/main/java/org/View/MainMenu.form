@@ -1239,6 +1239,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Function"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FunctionButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="DiscountBtn">
           <Properties>
