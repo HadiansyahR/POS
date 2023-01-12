@@ -622,7 +622,7 @@ public class FunctionView extends javax.swing.JFrame {
        
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data User Berhasil Ditambahkan");
-            getData("Manage Product");
+            getData("Manage User");
             clearData();
         } else {
             JOptionPane.showMessageDialog(null, "Data User Gagal Ditambahkan", " Pesan", JOptionPane.ERROR_MESSAGE);
@@ -646,7 +646,7 @@ public class FunctionView extends javax.swing.JFrame {
         
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data User Berhasil Diupdate");
-            getData("Manage Product");
+            getData("Manage User");
             clearData();
         } else {
             JOptionPane.showMessageDialog(null, "Data User Gagal Diupdate", " Pesan", JOptionPane.ERROR_MESSAGE);
@@ -670,7 +670,7 @@ public class FunctionView extends javax.swing.JFrame {
         
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data User Berhasil Dihapus");
-            getData("Manage Product");
+            getData("Manage User");
             clearData();
         } else {
             JOptionPane.showMessageDialog(null, "Data User Gagal Dihapus", " Pesan", JOptionPane.ERROR_MESSAGE);
