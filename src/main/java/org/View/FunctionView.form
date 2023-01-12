@@ -380,6 +380,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Name"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NameTextfieldMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="PriceTextfield">
               <Properties>
@@ -394,6 +397,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Price"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PriceTextfieldMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="QuantityTextfield">
               <Properties>
@@ -408,6 +414,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quantity"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="QuantityTextfieldMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="SubCategoryDropdown">
               <Properties>
@@ -568,6 +577,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UsernameTextfieldMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="RolesDropdown">
               <Properties>
@@ -608,6 +620,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pin"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PinTextfieldMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
