@@ -171,16 +171,31 @@ public class FunctionView extends javax.swing.JFrame {
         NameTextfield.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         NameTextfield.setForeground(new java.awt.Color(35, 35, 35));
         NameTextfield.setText("Name");
+        NameTextfield.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NameTextfieldMouseClicked(evt);
+            }
+        });
 
         PriceTextfield.setBackground(new java.awt.Color(249, 249, 249));
         PriceTextfield.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         PriceTextfield.setForeground(new java.awt.Color(35, 35, 35));
         PriceTextfield.setText("Price");
+        PriceTextfield.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PriceTextfieldMouseClicked(evt);
+            }
+        });
 
         QuantityTextfield.setBackground(new java.awt.Color(249, 249, 249));
         QuantityTextfield.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         QuantityTextfield.setForeground(new java.awt.Color(35, 35, 35));
         QuantityTextfield.setText("Quantity");
+        QuantityTextfield.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                QuantityTextfieldMouseClicked(evt);
+            }
+        });
 
         SubCategoryDropdown.setBackground(new java.awt.Color(249, 249, 249));
         SubCategoryDropdown.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -256,6 +271,11 @@ public class FunctionView extends javax.swing.JFrame {
         UsernameTextfield.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         UsernameTextfield.setForeground(new java.awt.Color(35, 35, 35));
         UsernameTextfield.setText("Username");
+        UsernameTextfield.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UsernameTextfieldMouseClicked(evt);
+            }
+        });
 
         RolesDropdown.setBackground(new java.awt.Color(249, 249, 249));
         RolesDropdown.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -271,6 +291,11 @@ public class FunctionView extends javax.swing.JFrame {
         PinTextfield.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         PinTextfield.setForeground(new java.awt.Color(35, 35, 35));
         PinTextfield.setText("Pin");
+        PinTextfield.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PinTextfieldMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -491,16 +516,16 @@ public class FunctionView extends javax.swing.JFrame {
         return id;
     }
     
-    public void clearData(){
-        UsernameTextfield.setText("");
-        PinTextfield.setText("");
-        RolesDropdown.setSelectedItem(null);
+    public void clearInput(){
+        UsernameTextfield.setText("Username");
+        PinTextfield.setText("Pin");
+        RolesDropdown.setSelectedIndex(0);
         
-        NameTextfield.setText("");
-        CategoryDropdown.setSelectedItem(null);
-        SubCategoryDropdown.setSelectedItem(null);
-        PriceTextfield.setText("");
-        QuantityTextfield.setText("");
+        NameTextfield.setText("Name");
+        CategoryDropdown.setSelectedIndex(0);
+        SubCategoryDropdown.setSelectedIndex(0);
+        PriceTextfield.setText("Price");
+        QuantityTextfield.setText("Quantity");
     }
     
     private void BacktomainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BacktomainButtonActionPerformed
@@ -545,7 +570,7 @@ public class FunctionView extends javax.swing.JFrame {
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data Produk Berhasil Diupdate");
             getData("Manage Product");
-            clearData();
+            clearInput();
         } else {
             JOptionPane.showMessageDialog(null, "Data Produk Gagal Diupdate", " Pesan", JOptionPane.ERROR_MESSAGE);
         }
@@ -569,14 +594,14 @@ public class FunctionView extends javax.swing.JFrame {
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data Produk Berhasil Dihapus");
             getData("Manage Product");
-            clearData();
+            clearInput();
         } else {
             JOptionPane.showMessageDialog(null, "Data Produk Gagal Dihapus", " Pesan", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_DeleteProductButtonActionPerformed
 
     private void ClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearButtonActionPerformed
-        // TODO add your handling code here:
+        clearInput();
     }//GEN-LAST:event_ClearButtonActionPerformed
 
     private void SubCategoryDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubCategoryDropdownActionPerformed
@@ -598,7 +623,7 @@ public class FunctionView extends javax.swing.JFrame {
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data Produk Berhasil Ditambahkan");
             getData("Manage Product");
-            clearData();
+            clearInput();
         } else {
             JOptionPane.showMessageDialog(null, "Data Produk Gagal Ditambahkan", " Pesan", JOptionPane.ERROR_MESSAGE);
         }
@@ -623,7 +648,7 @@ public class FunctionView extends javax.swing.JFrame {
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data User Berhasil Ditambahkan");
             getData("Manage User");
-            clearData();
+            clearInput();
         } else {
             JOptionPane.showMessageDialog(null, "Data User Gagal Ditambahkan", " Pesan", JOptionPane.ERROR_MESSAGE);
         }
@@ -647,7 +672,7 @@ public class FunctionView extends javax.swing.JFrame {
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data User Berhasil Diupdate");
             getData("Manage User");
-            clearData();
+            clearInput();
         } else {
             JOptionPane.showMessageDialog(null, "Data User Gagal Diupdate", " Pesan", JOptionPane.ERROR_MESSAGE);
         }
@@ -671,7 +696,7 @@ public class FunctionView extends javax.swing.JFrame {
         if(hasil){
             JOptionPane.showMessageDialog(null, "Data User Berhasil Dihapus");
             getData("Manage User");
-            clearData();
+            clearInput();
         } else {
             JOptionPane.showMessageDialog(null, "Data User Gagal Dihapus", " Pesan", JOptionPane.ERROR_MESSAGE);
         }
@@ -686,6 +711,26 @@ public class FunctionView extends javax.swing.JFrame {
         ViewTransaction vt = new ViewTransaction(userFunction, loginStatusFunction);
         vt.setVisible(true);
     }//GEN-LAST:event_ViewTransactionButtonActionPerformed
+
+    private void UsernameTextfieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsernameTextfieldMouseClicked
+        UsernameTextfield.setText("");
+    }//GEN-LAST:event_UsernameTextfieldMouseClicked
+
+    private void PinTextfieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PinTextfieldMouseClicked
+        PinTextfield.setText("");
+    }//GEN-LAST:event_PinTextfieldMouseClicked
+
+    private void NameTextfieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NameTextfieldMouseClicked
+        NameTextfield.setText("");
+    }//GEN-LAST:event_NameTextfieldMouseClicked
+
+    private void PriceTextfieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PriceTextfieldMouseClicked
+        PriceTextfield.setText("");
+    }//GEN-LAST:event_PriceTextfieldMouseClicked
+
+    private void QuantityTextfieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_QuantityTextfieldMouseClicked
+        QuantityTextfield.setText("");
+    }//GEN-LAST:event_QuantityTextfieldMouseClicked
 
     /**
      * @param args the command line arguments
