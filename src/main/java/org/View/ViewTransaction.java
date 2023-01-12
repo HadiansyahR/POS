@@ -274,7 +274,7 @@ public class ViewTransaction extends javax.swing.JFrame {
         SearchField.setBackground(new java.awt.Color(249, 249, 249));
         SearchField.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         SearchField.setForeground(new java.awt.Color(35, 35, 35));
-        SearchField.setText("Find");
+        SearchField.setText("Find by Id");
         SearchField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SearchFieldMouseClicked(evt);

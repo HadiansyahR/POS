@@ -72,6 +72,106 @@ public class ControllerProduct {
         return product;
     }
     
+    public boolean insertProduct(String product_name, String category, String subCategory, double price, int quantity){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        int row = 0;
+        query = "SELECT COUNT(*) FROM product";
+        
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs;
+            rs = stm.executeQuery(query);
+            while(rs.next()){
+                row = rs.getInt("COUNT(*)");
+            }            
+        } catch (Exception e){
+            e.getMessage();
+        }
+        
+        String product_id;
+        
+        int rowAffected = 0;
+//        System.out.println(row);
+        
+        if(row < 10){
+            product_id = "P00"+(row+1);
+        }else if(row < 100){
+            product_id = "P0"+(row+1);
+        }else{
+            product_id = "P"+(row+1);
+        }
+        
+        query = "INSERT INTO product VALUES("
+                + "'"+product_id+"', "
+                + "'"+product_name+"', "
+                + "'"+category+"', "
+                + "'"+subCategory+"', "
+                + ""+price+", "
+                + ""+quantity+")";
+        try{
+            Statement stm = con.createStatement();
+            stm.executeUpdate(query);
+            
+            conMan.LogOff();
+            return true;
+        } catch (Exception ex){
+            System.out.println(ex.toString());
+            
+            conMan.LogOff();
+            return false;
+        }
+    }
+    
+    public boolean updateProduct(String product_id, String product_name, String category, String subCategory, double price, int quantity){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        query = "UPDATE product SET "
+                + "product_name = '"+product_name+"', "
+                + "category = '"+category+"', "
+                + "sub_category = '"+subCategory+"', "
+                + "price = "+price+", "
+                + "quantity = "+quantity+" "
+                + "WHERE product_id = '"+product_id+"'";
+        
+        try{
+            Statement stm = con.createStatement();
+            stm.executeUpdate(query);
+            
+            conMan.LogOff();
+            return true;
+        } catch (Exception ex){
+            System.out.println(ex.toString());
+            
+            conMan.LogOff();
+            return false;
+        }
+    }
+    
+    
+    public boolean deleteProduct(String product_id){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        query = "DELETE FROM product WHERE product_id = '"+product_id+"'";
+        
+        try{
+            Statement stm = con.createStatement();
+            stm.executeUpdate(query);
+            
+            conMan.LogOff();
+            return true;
+        } catch (Exception ex){
+            System.out.println(ex.toString());
+            
+            conMan.LogOff();
+            return false;
+        }
+        
+    }
+    
 //    public List<Product> getFood(){
 //        ConnectionManager conMan = new ConnectionManager();
 //        Connection con = conMan.LogOn();
