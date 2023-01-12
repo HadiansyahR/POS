@@ -4,17 +4,33 @@
  */
 package org.View;
 
+import javax.swing.table.DefaultTableModel;
+import org.Model.User;
+
 /**
  *
  * @author Dreamvalian
  */
 public class FunctionView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FunctionView
-     */
+    private User userFunction;
+    private int loginStatusFunction;
+    
+    private DefaultTableModel model;
+    
     public FunctionView() {
         initComponents();
+    }
+    
+    public FunctionView(User user, int loginStatus) {
+        initComponents();
+        
+        System.out.println(user.getRole());
+        System.out.println(loginStatus);
+        
+        loginStatusFunction = loginStatus;
+        userFunction = user;
+        
     }
 
     /**
@@ -88,6 +104,11 @@ public class FunctionView extends javax.swing.JFrame {
         ViewTransactionButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         ViewTransactionButton.setForeground(new java.awt.Color(35, 35, 35));
         ViewTransactionButton.setText("View Trans.");
+        ViewTransactionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewTransactionButtonActionPerformed(evt);
+            }
+        });
 
         UpdateProductButton.setBackground(new java.awt.Color(249, 249, 249));
         UpdateProductButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -419,11 +440,20 @@ public class FunctionView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BacktomainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BacktomainButtonActionPerformed
-
+        dispose();
+        MainMenu mm = new MainMenu(userFunction, loginStatusFunction);
+        mm.setVisible(true);
     }//GEN-LAST:event_BacktomainButtonActionPerformed
 
     private void ManageProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageProductButtonActionPerformed
-        // TODO add your handling code here:
+        model = new DefaultTableModel();
+        
+        ManageTable.setModel(model);
+        model.addColumn("Transaction Id");
+        model.addColumn("Table Num");
+        model.addColumn("Total");
+        model.addColumn("Transaction Date");
+        model.addColumn("Payment Status");
     }//GEN-LAST:event_ManageProductButtonActionPerformed
 
     private void UpdateProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProductButtonActionPerformed
@@ -469,6 +499,12 @@ public class FunctionView extends javax.swing.JFrame {
     private void RolesDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RolesDropdownActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RolesDropdownActionPerformed
+
+    private void ViewTransactionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTransactionButtonActionPerformed
+        dispose();
+        ViewTransaction vt = new ViewTransaction(userFunction, loginStatusFunction);
+        vt.setVisible(true);
+    }//GEN-LAST:event_ViewTransactionButtonActionPerformed
 
     /**
      * @param args the command line arguments
