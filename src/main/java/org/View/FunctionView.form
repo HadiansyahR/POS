@@ -49,19 +49,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="448" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
                       <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
                       <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="544" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -119,50 +119,49 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="UpdateUserButton" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   <Component id="CreateUserButton" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                   <Component id="DeleteUserButton" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="PinTextfield" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="RolesDropdown" alignment="1" pref="193" max="32767" attributes="0"/>
-                                  <Component id="UsernameTextfield" alignment="1" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="PinTextfield" max="32767" attributes="0"/>
+                                  <Component id="UsernameTextfield" max="32767" attributes="0"/>
+                                  <Component id="RolesDropdown" pref="216" max="32767" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Component id="ManageUserButton" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="UpdateProductButton" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="CreateProductButton" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="DeleteProductButton" alignment="1" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="CreateProductButton" max="32767" attributes="0"/>
+                                  <Component id="DeleteProductButton" max="32767" attributes="0"/>
+                                  <Component id="UpdateProductButton" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="NameTextfield" alignment="1" max="32767" attributes="0"/>
                                   <Component id="PriceTextfield" alignment="1" max="32767" attributes="0"/>
                                   <Component id="QuantityTextfield" alignment="1" max="32767" attributes="0"/>
                                   <Component id="SubCategoryDropdown" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="CategoryDropdown" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="CategoryDropdown" alignment="1" min="-2" pref="187" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="ManageProductButton" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="ClearButton" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ManageUserButton" min="-2" pref="348" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ReportButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ViewTransactionButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="ManageProductButton" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="ClearButton" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="ReportButton" min="-2" pref="158" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="ViewTransactionButton" min="-2" pref="144" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -175,60 +174,56 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ManageUserButton" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="ManageProductButton" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="ManageProductButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                          <Component id="ManageUserButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="CreateUserButton" min="-2" pref="44" max="-2" attributes="0"/>
+                                          <Component id="CreateProductButton" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="UsernameTextfield" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                              <Component id="PinTextfield" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="RolesDropdown" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                                      <Component id="CreateProductButton" min="-2" pref="44" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="CreateUserButton" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="UpdateUserButton" min="-2" pref="44" max="-2" attributes="0"/>
+                                                  <Component id="RolesDropdown" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="UpdateUserButton" min="-2" pref="44" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="DeleteUserButton" min="-2" pref="46" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="UpdateProductButton" min="-2" pref="44" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="DeleteProductButton" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                              <Component id="DeleteUserButton" min="-2" pref="46" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="UpdateProductButton" min="-2" pref="50" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="DeleteProductButton" min="-2" pref="45" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="NameTextfield" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CategoryDropdown" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="SubCategoryDropdown" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="NameTextfield" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="CategoryDropdown" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="SubCategoryDropdown" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="UsernameTextfield" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="PinTextfield" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace pref="8" max="32767" attributes="0"/>
                                       <Component id="PriceTextfield" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="QuantityTextfield" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -638,7 +633,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="BacktomainButton" min="-2" pref="252" max="-2" attributes="0"/>
+                      <Component id="BacktomainButton" min="-2" pref="445" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
