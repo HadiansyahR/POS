@@ -53,8 +53,7 @@ public class ViewTransaction extends javax.swing.JFrame {
         userView = user;
         SalesDropDown.setSelectedItem(null);
         model = new DefaultTableModel();
-//        System.out.println(user.getRole());
-//        System.out.println(loginStatus);
+        
         TransactionTable.setModel(model);
         model.addColumn("Transaction Id");
         model.addColumn("Table Num");
@@ -73,7 +72,7 @@ public class ViewTransaction extends javax.swing.JFrame {
        
        dtm.setRowCount(0);
        
-       List<TransactionGroup> listTransactionGroup = contTrans.showListTransaction();
+       List<TransactionGroup> listTransactionGroup = contTrans.getListTransaction();
        
        String[] data = new String[6];
        for(TransactionGroup transGroup: listTransactionGroup){
@@ -114,6 +113,29 @@ public class ViewTransaction extends javax.swing.JFrame {
            
            dtm.addRow(data);
        }
+    }
+    
+    public final void getTransactionDetails(int i){
+        DefaultTableModel dtm = (DefaultTableModel) TransactionTable.getModel();
+        contTrans = new ControllerTransaction();
+       
+        dtm.setRowCount(0);
+       
+        List<Transaction> listTransaction = contTrans.showListTransaction(i);
+       
+        String[] data = new String[9];
+        for(Transaction transaction: listTransaction){
+            data[0] = Integer.toString(transaction.getTransaction_id());
+            data[1] = transaction.getTable_num();
+            data[2] = transaction.getProduct_name();
+            data[3] = Integer.toString(transaction.getQuantity());
+            data[4] = Double.toString(transaction.getPrice());
+            data[5] = Double.toString(transaction.getSubtotal());
+            data[6] = transaction.getTransaction_date();
+            data[7] = Integer.toString(transaction.getPayment_status());
+                       
+            dtm.addRow(data);
+        }
     }
     
     public void setTableById(String id){
@@ -434,6 +456,15 @@ public class ViewTransaction extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
+        model = new DefaultTableModel();
+        
+        TransactionTable.setModel(model);
+        model.addColumn("Transaction Id");
+        model.addColumn("Table Num");
+        model.addColumn("Total");
+        model.addColumn("Transaction Date");
+        model.addColumn("Payment Status");
+        
         String choice = (String) SalesDropDown.getSelectedItem();
         if (choice.equals("All")){
             getData();
@@ -444,7 +475,30 @@ public class ViewTransaction extends javax.swing.JFrame {
     }//GEN-LAST:event_RefreshButtonActionPerformed
 
     private void OpenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenButtonActionPerformed
-        // TODO add your handling code here:
+        
+        int i = TransactionTable.getSelectedRow();
+        
+        if(i == -1){
+            JOptionPane.showMessageDialog(OpenButton, "Harap pilih salah satu data!",
+                    "Warning!", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else{
+            String idString = model.getValueAt(i, 0).toString();
+            model = new DefaultTableModel();
+        
+            TransactionTable.setModel(model);
+            model.addColumn("Transaction Id");
+            model.addColumn("Table Num");
+            model.addColumn("Product Name");
+            model.addColumn("Quantity");
+            model.addColumn("Price");
+            model.addColumn("Sub Total");
+            model.addColumn("Transaction Date");
+            model.addColumn("Payment Status");
+
+            getTransactionDetails(Integer.parseInt(idString));
+        }       
     }//GEN-LAST:event_OpenButtonActionPerformed
 
     private void NewTableButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewTableButtonActionPerformed
@@ -478,6 +532,14 @@ public class ViewTransaction extends javax.swing.JFrame {
 
         if (SearchField.getText().isEmpty() == false) {
             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+                model = new DefaultTableModel();
+        
+                TransactionTable.setModel(model);
+                model.addColumn("Transaction Id");
+                model.addColumn("Table Num");
+                model.addColumn("Total");
+                model.addColumn("Transaction Date");
+                model.addColumn("Payment Status");
                 setTableById(idString);
                 SearchField.setText("Find by Id");
             }
