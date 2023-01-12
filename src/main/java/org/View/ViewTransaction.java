@@ -166,8 +166,6 @@ public class ViewTransaction extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         RefreshButton = new javax.swing.JButton();
-        AllRadioButton = new javax.swing.JRadioButton();
-        OperatorRadioButton = new javax.swing.JRadioButton();
         SalesDropDown = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -236,16 +234,6 @@ public class ViewTransaction extends javax.swing.JFrame {
             }
         });
 
-        AllRadioButton.setBackground(new java.awt.Color(249, 249, 249));
-        AllRadioButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        AllRadioButton.setForeground(new java.awt.Color(35, 35, 35));
-        AllRadioButton.setText("All");
-
-        OperatorRadioButton.setBackground(new java.awt.Color(249, 249, 249));
-        OperatorRadioButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        OperatorRadioButton.setForeground(new java.awt.Color(35, 35, 35));
-        OperatorRadioButton.setText("Selected Operator");
-
         SalesDropDown.setBackground(new java.awt.Color(249, 249, 249));
         SalesDropDown.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         SalesDropDown.setForeground(new java.awt.Color(35, 35, 35));
@@ -299,36 +287,30 @@ public class ViewTransaction extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2))
+                    .addComponent(SearchField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AllRadioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(OperatorRadioButton)
                             .addComponent(jCheckBox1)
                             .addComponent(jCheckBox2))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(SearchField, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
+                .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(AllRadioButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(OperatorRadioButton)
-                .addGap(7, 7, 7)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(SalesDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox2)
                 .addGap(18, 18, 18)
+                .addComponent(jCheckBox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(RefreshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -418,7 +400,7 @@ public class ViewTransaction extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(177, 177, 177)
+                .addGap(239, 239, 239)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OpenButton, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
                     .addComponent(ViewButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
@@ -542,11 +524,9 @@ public class ViewTransaction extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton AllRadioButton;
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton NewTableButton;
     private javax.swing.JButton OpenButton;
-    private javax.swing.JRadioButton OperatorRadioButton;
     private javax.swing.JButton PrintButton;
     private javax.swing.JButton RefreshButton;
     private javax.swing.JComboBox<String> SalesDropDown;

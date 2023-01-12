@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2023 at 08:45 AM
+-- Generation Time: Jan 12, 2023 at 05:15 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -41,9 +41,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `category`, `sub_category`, `price`, `quantity`) VALUES
-('P001', 'Babi Guling', 'Food', 'Pork', 20000, 5),
+('P001', 'Babi Guling', 'Food', 'Main Course', 20000, 5),
 ('P002', 'Espresso', 'Beverage', 'Coffee', 15000, 4),
-('P003', 'Steak Babi', 'Food', 'Pork', 30000, 2),
+('P003', 'Steak Babi', 'Food', 'Main Course', 30000, 2),
 ('P004', 'Avocado Juice', 'Beverage', 'Juice', 10000, 5),
 ('P005', 'Sup Ayam', 'Food', 'Soup', 10000, 3),
 ('P006', 'Salad Buah Mix', 'Food', 'Salad', 40000, 4),
@@ -86,7 +86,20 @@ INSERT INTO `transaction` (`transaction_id`, `table_num`, `product_name`, `quant
 (3, 'TA', 'Espresso', 1, 15000, 15000, '2023-01-11', 0),
 (3, 'TA', 'Miposhka', 2, 100000, 200000, '2023-01-11', 0),
 (4, '5', 'Salad Buah Mix', 1, 40000, 40000, '2023-01-11', 0),
-(4, '5', 'Coconut Water', 1, 10000, 10000, '2023-01-11', 0);
+(4, '5', 'Coconut Water', 1, 10000, 10000, '2023-01-11', 0),
+(5, 'TA', 'Spring Rolls', 1, 4000, 4000, '2023-01-11', 0),
+(5, 'TA', 'Vodka', 1, 50000, 50000, '2023-01-11', 0),
+(6, '5', 'Spring Rolls', 1, 4000, 4000, '2023-01-11', 0),
+(6, '5', 'Avocado Juice', 5, 10000, 50000, '2023-01-11', 0),
+(6, '5', 'Miposhka', 1, 100000, 100000, '2023-01-11', 0),
+(6, '5', 'Salad Buah Mix', 2, 40000, 80000, '2023-01-11', 0),
+(7, 'TA', 'Spring Rolls', 1, 4000, 4000, '2023-01-11', 0),
+(7, 'TA', 'Vodka', 1, 50000, 50000, '2023-01-11', 0),
+(8, '5', 'Spring Rolls', 1, 4000, 4000, '2023-01-11', 0),
+(8, '5', 'Vodka', 1, 50000, 50000, '2023-01-11', 0),
+(9, 'TA', 'Vodka', 5, 50000, 250000, '2023-01-11', 0),
+(10, '3', 'Spring Rolls', 1, 4000, 4000, '2023-01-12', 0),
+(10, '3', 'Vodka', 1, 50000, 50000, '2023-01-12', 0);
 
 -- --------------------------------------------------------
 
@@ -105,8 +118,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`pin`, `username`, `role`) VALUES
+(1131, 'korod', 'Server'),
 (1311, 'lele', 'Admin'),
-(2311, 'micel', 'Waiter'),
+(2311, 'micel', 'Server'),
 (3311, 'hadi', 'Cashier');
 
 --
