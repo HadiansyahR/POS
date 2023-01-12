@@ -115,7 +115,7 @@
         <Component class="javax.swing.JLabel" name="Logo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Sekolah Agama\Season 3\ISB-205 Object Oriented Programming\Project\POS\src\main\java\org\View\Logo.png"/>
+              <Image iconType="2" name="C:\Users\Acer\Documents\NetBeansProjects\POS\src\main\java\org\View\Logo.png"/>
             </Property>
           </Properties>
         </Component>

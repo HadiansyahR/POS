@@ -79,7 +79,38 @@ public class ControllerTransaction {
         return row;
     }
     
-    public List<TransactionGroup> showListTransaction(){
+    public List<Transaction> showListTransaction(int id){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        List<Transaction> listTransaction = new ArrayList<>();
+        query = "SELECT * FROM transaction WHERE transaction_id = "+id;
+        
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs;
+            rs = stm.executeQuery(query);
+            while(rs.next()){
+                Transaction trans = new Transaction();
+                trans.setTransaction_id(id);
+                trans.setTable_num(rs.getString("table_num"));
+                trans.setProduct_name(rs.getString("product_name"));
+                trans.setQuantity(rs.getInt("quantity"));
+                trans.setPrice(rs.getDouble("price"));
+                trans.setSubtotal(rs.getDouble("subtotal"));
+                trans.setTransaction_date(rs.getString("transaction_date"));
+                trans.setPayment_status(rs.getInt("payment_status"));
+                
+                listTransaction.add(trans);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.toString());
+            conMan.LogOff();
+        }
+        conMan.LogOff();
+        return listTransaction;
+    }
+    
+    public List<TransactionGroup> getListTransaction(){
         ConnectionManager conMan = new ConnectionManager();
         Connection con = conMan.LogOn();
         

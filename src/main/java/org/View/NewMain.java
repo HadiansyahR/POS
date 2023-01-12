@@ -51,7 +51,7 @@ public class NewMain {
 //        System.out.println(date.format(dtf));
         ControllerTransaction ct = new ControllerTransaction();
         
-//        ct.showListTransaction();
+//        ct.getListTransaction();
         
         ControllerUser cu = new ControllerUser();
         ControllerProduct cp = new ControllerProduct();
