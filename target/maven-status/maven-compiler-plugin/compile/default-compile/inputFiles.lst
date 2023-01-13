@@ -1,6 +1,13 @@
-D:\Sekolah Agama\Season 3\ISB-205 Object Oriented Programming\Project\POS\src\main\java\org\Main\Main.java
-D:\Sekolah Agama\Season 3\ISB-205 Object Oriented Programming\Project\POS\src\main\java\org\Controller\test1.java
-D:\Sekolah Agama\Season 3\ISB-205 Object Oriented Programming\Project\POS\src\main\java\org\View\Splash.java
-D:\Sekolah Agama\Season 3\ISB-205 Object Oriented Programming\Project\POS\src\main\java\org\Model\test3.java
-D:\Sekolah Agama\Season 3\ISB-205 Object Oriented Programming\Project\POS\src\main\java\org\View\test4.java
-D:\Sekolah Agama\Season 3\ISB-205 Object Oriented Programming\Project\POS\src\main\java\org\Main\test2.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\View\SplashScreen.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\View\ViewTransaction.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\Controller\ControllerProduct.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\Controller\ControllerTransaction.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\Model\Transaction.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\Model\Product.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\Model\User.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\View\FunctionView.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\ConnectionManager\ConnectionManager.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\View\NewMain.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\Controller\ControllerUser.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\View\MainMenu.java
+C:\Users\DELL\Documents\NetBeansProjects\POS\src\main\java\org\Model\TransactionGroup.java

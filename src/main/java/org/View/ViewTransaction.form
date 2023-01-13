@@ -127,7 +127,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="ViewButton" min="-2" pref="110" max="-2" attributes="0"/>
-                              <Component id="TenderButton" alignment="1" max="32767" attributes="0"/>
+                              <Component id="CloseBill" alignment="1" max="32767" attributes="0"/>
                               <Component id="CloseButton" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -149,7 +149,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="NewTableButton" alignment="3" pref="41" max="32767" attributes="0"/>
-                      <Component id="TenderButton" alignment="3" pref="40" max="32767" attributes="0"/>
+                      <Component id="CloseBill" alignment="3" pref="40" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -412,7 +412,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="TenderButton">
+        <Component class="javax.swing.JButton" name="CloseBill">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -423,10 +423,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="23" green="23" red="23" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Tender"/>
+            <Property name="text" type="java.lang.String" value="Close Bill"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TenderButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CloseBillActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="CloseButton">

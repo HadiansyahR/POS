@@ -6,6 +6,7 @@ package org.Controller;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -243,6 +244,29 @@ public class ControllerTransaction {
         conMan.LogOff();
         
         return listTransactionGroup;
+    }
+    public boolean ManageTransaction(int transaction_id){
+        Boolean updateStatus = false;
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        int rowAffected = 0;
+        query = "UPDATE transaction SET payment_status = "+ 
+                1 +" WHERE transaction_id = "+transaction_id;
+        
+        try{
+            Statement stm = con.createStatement();
+            rowAffected = stm.executeUpdate(query);
+            
+            if(rowAffected > 0){
+                updateStatus = true;
+            }else{
+                updateStatus = false;      
+            }   
+        }catch(SQLException e){
+            e.getMessage();
+        }        
+        return updateStatus;
     }
 
 }
