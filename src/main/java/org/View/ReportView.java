@@ -29,6 +29,8 @@ public class ReportView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         CloseButton = new javax.swing.JButton();
         Preview = new javax.swing.JLabel();
 
@@ -38,15 +40,22 @@ public class ReportView extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(35, 35, 35));
         jPanel1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
 
+        jScrollPane1.setBackground(new java.awt.Color(249, 249, 249));
+        jScrollPane1.setForeground(new java.awt.Color(35, 35, 35));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 307, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 334, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
         );
 
         CloseButton.setBackground(new java.awt.Color(249, 249, 249));
@@ -150,5 +159,7 @@ public class ReportView extends javax.swing.JFrame {
     private javax.swing.JLabel Preview;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
