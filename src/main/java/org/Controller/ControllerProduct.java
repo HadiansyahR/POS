@@ -200,6 +200,46 @@ public class ControllerProduct {
         
     }
     
+//    public String[] getListCategory(){
+//        ConnectionManager conMan = new ConnectionManager();
+//        Connection con = conMan.LogOn();
+//        
+//        int row = 0;
+//        query = "SELECT * FROM product GROUP BY sub_category";
+//        
+//        try{
+//            Statement stm = con.createStatement();
+//            ResultSet rs;
+//            rs = stm.executeQuery(query);
+//            while(rs.next()){
+//                row++;
+//            }            
+//        } catch (Exception e){
+//            e.getMessage();
+//        }
+//        
+//        String[] listCategory = new String[row];
+//        
+//        query = "SELECT sub_category FROM product GROUP BY sub_category";
+//        int i = 0;
+//        try{
+//            Statement stm = con.createStatement();
+//            ResultSet rs;
+//            rs = stm.executeQuery(query);
+//            while(rs.next()){
+//                String subCategory;
+//                subCategory = rs.getString("sub_category");
+//                listCategory[i] = subCategory;
+//                i++;
+//            }
+//        }catch(Exception ex){
+//            System.out.println(ex.toString());
+//            conMan.LogOff();
+//        }
+//        conMan.LogOff();
+//        return listCategory;
+//    }
+    
 //    public List<Product> getFood(){
 //        ConnectionManager conMan = new ConnectionManager();
 //        Connection con = conMan.LogOn();

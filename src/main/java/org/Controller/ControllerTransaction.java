@@ -269,4 +269,37 @@ public class ControllerTransaction {
         return updateStatus;
     }
 
+    public List<Transaction> getTodayTransaction(String date){
+        ConnectionManager conMan = new ConnectionManager();
+        Connection con = conMan.LogOn();
+        
+        List<Transaction> listTransaction = new ArrayList<>();
+        
+        query = "SELECT * FROM transaction WHERE transaction_date = '"+date+"'";
+        
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs;
+            rs = stm.executeQuery(query);
+            while(rs.next()){
+                Transaction trans = new Transaction();
+                trans.setTransaction_id(rs.getInt("transaction_id"));
+                trans.setTable_num(rs.getString("table_num"));
+                trans.setProduct_name(rs.getString("product_name"));
+                trans.setQuantity(rs.getInt("quantity"));
+                trans.setPrice(rs.getDouble("price"));
+                trans.setSubtotal(rs.getDouble("subtotal"));
+                trans.setTransaction_date(date);
+                trans.setPayment_status(rs.getInt("payment_status"));
+                
+                listTransaction.add(trans);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.toString());
+            conMan.LogOff();
+        }
+        conMan.LogOff();
+        
+        return listTransaction;
+    }
 }
