@@ -35,8 +35,8 @@ public class FunctionView extends javax.swing.JFrame {
     public FunctionView(User user, int loginStatus) {
         initComponents();
         
-        System.out.println(user.getRole());
-        System.out.println(loginStatus);
+//        System.out.println(user.getRole());
+//        System.out.println(loginStatus);
         
         loginStatusFunction = loginStatus;
         userFunction = user;
@@ -100,6 +100,11 @@ public class FunctionView extends javax.swing.JFrame {
         ReportButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         ReportButton.setForeground(new java.awt.Color(35, 35, 35));
         ReportButton.setText("Report");
+        ReportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReportButtonActionPerformed(evt);
+            }
+        });
 
         ManageProductButton.setBackground(new java.awt.Color(249, 249, 249));
         ManageProductButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -731,6 +736,11 @@ public class FunctionView extends javax.swing.JFrame {
     private void QuantityTextfieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_QuantityTextfieldMouseClicked
         QuantityTextfield.setText("");
     }//GEN-LAST:event_QuantityTextfieldMouseClicked
+
+    private void ReportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportButtonActionPerformed
+        dispose();
+        ReportView rv = new ReportView(userFunction, loginStatusFunction);
+    }//GEN-LAST:event_ReportButtonActionPerformed
 
     /**
      * @param args the command line arguments

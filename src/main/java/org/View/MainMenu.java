@@ -183,6 +183,11 @@ public class MainMenu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
+//    public void receipt(){
+//        String path = "org/receipt.jrxml";
+//        
+//    }
+    
     public void setTable(String quantity, Product product){
         DefaultTableModel dtm = (DefaultTableModel) TableOrder.getModel();
         

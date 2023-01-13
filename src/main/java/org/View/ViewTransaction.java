@@ -26,7 +26,7 @@ public class ViewTransaction extends javax.swing.JFrame {
     private TransactionGroup transGroup;
     private Transaction trans;
     private User userView;
-    Date date;
+    private Date date;
     
     private int loginStatusView;
     
