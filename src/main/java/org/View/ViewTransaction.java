@@ -5,7 +5,9 @@
 package org.View;
 
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -24,6 +26,7 @@ public class ViewTransaction extends javax.swing.JFrame {
     private TransactionGroup transGroup;
     private Transaction trans;
     private User userView;
+    Date date;
     
     private int loginStatusView;
     
@@ -197,7 +200,7 @@ public class ViewTransaction extends javax.swing.JFrame {
         NewTableButton = new javax.swing.JButton();
         PrintButton = new javax.swing.JButton();
         ViewButton = new javax.swing.JButton();
-        TenderButton = new javax.swing.JButton();
+        CloseBill = new javax.swing.JButton();
         CloseButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -377,13 +380,13 @@ public class ViewTransaction extends javax.swing.JFrame {
             }
         });
 
-        TenderButton.setBackground(new java.awt.Color(249, 249, 249));
-        TenderButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        TenderButton.setForeground(new java.awt.Color(35, 35, 35));
-        TenderButton.setText("Tender");
-        TenderButton.addActionListener(new java.awt.event.ActionListener() {
+        CloseBill.setBackground(new java.awt.Color(249, 249, 249));
+        CloseBill.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        CloseBill.setForeground(new java.awt.Color(35, 35, 35));
+        CloseBill.setText("Close Bill");
+        CloseBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TenderButtonActionPerformed(evt);
+                CloseBillActionPerformed(evt);
             }
         });
 
@@ -413,7 +416,7 @@ public class ViewTransaction extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ViewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TenderButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CloseBill, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(CloseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -429,7 +432,7 @@ public class ViewTransaction extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NewTableButton, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                    .addComponent(TenderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                    .addComponent(CloseBill, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PrintButton, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
@@ -513,9 +516,30 @@ public class ViewTransaction extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ViewButtonActionPerformed
 
-    private void TenderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TenderButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TenderButtonActionPerformed
+    private void CloseBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseBillActionPerformed
+        Boolean update = false;
+        int i = TransactionTable.getSelectedRow();
+        
+        if(i == -1){
+            JOptionPane.showMessageDialog(OpenButton, "Harap pilih salah satu data!",
+                    "Warning!", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else{
+            String idString = model.getValueAt(i, 0).toString();
+            getTransactionDetails(Integer.parseInt(idString));
+        }
+        
+        update = contTrans.ManageTransaction(Integer.parseInt(SearchField.getText()));
+        if(update){
+            JOptionPane.showMessageDialog(CloseBill, "Update Success");
+            getData();
+        }else{
+            JOptionPane.showMessageDialog(CloseBill, "Update Failed");
+            getData();
+        }
+        
+    }//GEN-LAST:event_CloseBillActionPerformed
 
     private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButtonActionPerformed
         dispose();
@@ -586,6 +610,7 @@ public class ViewTransaction extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CloseBill;
     private javax.swing.JButton CloseButton;
     private javax.swing.JButton NewTableButton;
     private javax.swing.JButton OpenButton;
@@ -593,7 +618,6 @@ public class ViewTransaction extends javax.swing.JFrame {
     private javax.swing.JButton RefreshButton;
     private javax.swing.JComboBox<String> SalesDropDown;
     private javax.swing.JTextField SearchField;
-    private javax.swing.JButton TenderButton;
     private javax.swing.JTable TransactionTable;
     private javax.swing.JButton ViewButton;
     private javax.swing.JCheckBox jCheckBox1;
