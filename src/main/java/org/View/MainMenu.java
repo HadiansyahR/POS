@@ -18,6 +18,23 @@ import org.Model.Product;
 import org.Model.Transaction;
 import org.Model.User;
 
+import java.io.File;  
+import java.io.IOException;  
+import java.util.HashMap;  
+import java.util.Map;  
+import com.google.zxing.BarcodeFormat;  
+import com.google.zxing.EncodeHintType;  
+import com.google.zxing.MultiFormatWriter;  
+import com.google.zxing.NotFoundException;  
+import com.google.zxing.WriterException;  
+import com.google.zxing.client.j2se.MatrixToImageWriter;  
+import com.google.zxing.common.BitMatrix;  
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import org.Model.Receipt;
+
 /**
  *
  * @author Dreamvalian
@@ -36,6 +53,8 @@ public class MainMenu extends javax.swing.JFrame {
     static Transaction transaction;
     
     static User user;
+    
+    static Receipt receipt;
     
     static int loginStatus = 0;
     static int orderRow;
@@ -183,10 +202,43 @@ public class MainMenu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
+    public static void generateQRcode(String data, String path, String charset, Map map, int h, int w) throws WriterException, IOException  {
+        BitMatrix matrix = new MultiFormatWriter().encode(new String(data.getBytes(charset), charset), BarcodeFormat.QR_CODE, w, h);  
+        MatrixToImageWriter.writeToFile(matrix, path.substring(path.lastIndexOf('.') + 1), new File(path));  
+    }
 //    public void receipt(){
 //        String path = "org/receipt.jrxml";
 //        
 //    }
+    public String getReceipt(){
+//        List<Receipt> listReceipt = new ArrayList<>();
+        TableModel model = TableOrder.getModel();
+        
+        int row = 0;
+        
+        String headReceipt = "\tPayBright POS System\n"
+                            + "==============================\n"
+                            + "Qty\tName\tAmount\n"
+                            + "------------------------------------------------------------\n";
+        
+        String bodyReceipt = "";
+        
+        for(int i=0; i<model.getRowCount(); i++){
+            String bodyRow = model.getValueAt(i, 0).toString()+"\t"+model.getValueAt(i, 1)+"\t"+model.getValueAt(i, 2)+"\n";
+            bodyReceipt = bodyReceipt + bodyRow;
+        }
+        
+        String footerReceipt = "------------------------------------------------------------\n"
+                             + "Sub Total: \t\t"+SubTotalField.getText()+"\n"
+                             + "Discount: \t\t"+DiscountField.getText()+"\n"
+                             + "Total: \t\t"+TotalField.getText()+"\n"
+                             + "------------------------------------------------------------\n"
+                             + "Thanks For Using Our Service";
+        
+        String receipt = headReceipt + bodyReceipt + footerReceipt;
+        
+        return receipt;
+    }
     
     public void setTable(String quantity, Product product){
         DefaultTableModel dtm = (DefaultTableModel) TableOrder.getModel();
@@ -980,6 +1032,11 @@ public class MainMenu extends javax.swing.JFrame {
         PrintBillButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         PrintBillButton.setForeground(new java.awt.Color(35, 35, 35));
         PrintBillButton.setText("Print BIll");
+        PrintBillButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintBillButtonActionPerformed(evt);
+            }
+        });
 
         FunctionButton.setBackground(new java.awt.Color(249, 249, 249));
         FunctionButton.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
@@ -1729,6 +1786,34 @@ public class MainMenu extends javax.swing.JFrame {
         FunctionView fv = new FunctionView(user, loginStatus);
         fv.setVisible(true);
     }//GEN-LAST:event_FunctionButtonActionPerformed
+
+    private void PrintBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintBillButtonActionPerformed
+        String qr = getReceipt();
+        String path = "C:\\Users\\Acer\\Desktop\\Receipt.png";  
+        
+        String charset = "UTF-8";  
+        Map<EncodeHintType, ErrorCorrectionLevel> hashMap = new HashMap<EncodeHintType, ErrorCorrectionLevel>();  
+        
+        hashMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);  
+        try{
+            generateQRcode(qr, path, charset, hashMap, 200, 200);//increase or decrease height and width accodingly   
+        }
+        catch(Exception e){
+            e.getMessage();
+        }
+        
+        JFrame frm = new JFrame("Test");
+        JLabel qrcode = new JLabel("");
+        ImageIcon imgicon = new ImageIcon(path);
+        frm.add(qrcode);
+        qrcode.setIcon(imgicon);
+        frm.setIconImage(imgicon.getImage());
+        frm.setSize(300, 300);
+        
+        frm.setVisible(true);
+        
+        System.out.println("QR Code created successfully.");
+    }//GEN-LAST:event_PrintBillButtonActionPerformed
 
     /**
      * @param args the command line arguments
