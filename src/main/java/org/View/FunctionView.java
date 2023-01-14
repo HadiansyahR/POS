@@ -740,6 +740,7 @@ public class FunctionView extends javax.swing.JFrame {
     private void ReportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportButtonActionPerformed
         dispose();
         ReportView rv = new ReportView(userFunction, loginStatusFunction);
+        rv.setVisible(true);
     }//GEN-LAST:event_ReportButtonActionPerformed
 
     /**

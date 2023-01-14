@@ -65,6 +65,9 @@ public class ViewTransaction extends javax.swing.JFrame {
         model.addColumn("Payment Status");
         
         getData();
+        if(loginStatus !=3){
+            CloseBill.setEnabled(false);
+        }
         
         setLocationRelativeTo(null);
     }
